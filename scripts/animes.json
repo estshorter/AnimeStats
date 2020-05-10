@@ -1,4 +1,4 @@
-const animes = [
+[
     {
         "title": "新サクラ大戦 the Animation",
         "year": 2020,

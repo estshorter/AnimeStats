@@ -12,17 +12,18 @@ class MapCounter extends Map {
     }
 }
 
-const animeStats = jsonParser(animes.sort(compareYearKurDec));
-let yearResultString = ""
-for (const year of animeStats.sumByYear.keys()) {
-    yearResultString += getYearResultString(animeStats, year)
-}
-const hitrateAll = (animeStats.sumWatchedAll / animeStats.sum * 100).toFixed(1)
-yearResultString += `All : ${animeStats.sumWatchedAll}/${animeStats.sum}, ${hitrateAll}%`
-$('#sample-result').html(`<p>${yearResultString}</p>${animeStats.message}`);
-draw(animeStats.sumByKur, animeStats.sumByKurWatchedAll);
-drawHitRate(animeStats.sumByYear, animeStats.sumByYearWatchedAll);
-
+$.getJSON("animes.json", function (animes) {
+    const animeStats = jsonParser(animes.sort(compareYearKurDec));
+    let yearResultString = ""
+    for (const year of animeStats.sumByYear.keys()) {
+        yearResultString += getYearResultString(animeStats, year)
+    }
+    const hitrateAll = (animeStats.sumWatchedAll / animeStats.sum * 100).toFixed(1)
+    yearResultString += `All : ${animeStats.sumWatchedAll}/${animeStats.sum}, ${hitrateAll}%`
+    $('#sample-result').html(`<p>${yearResultString}</p>${animeStats.message}`);
+    draw(animeStats.sumByKur, animeStats.sumByKurWatchedAll);
+    drawHitRate(animeStats.sumByYear, animeStats.sumByYearWatchedAll);
+});
 function compareYearKurDec(a, b) {
     let r = 0;
     if (a.year > b.year) { r = -1; }
