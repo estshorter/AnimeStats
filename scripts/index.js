@@ -96,9 +96,7 @@ function draw(sumByKur, sumByKurWatchedAll) {
         kurName.push(kurYear);
     }
     // グラフオプションを指定
-    const options = {
-        // 出力先を指定
-        chart: { renderTo: "container" },
+    Highcharts.chart('container', {
         title: {
             text: "アニメ視聴数"
         },
@@ -131,12 +129,23 @@ function draw(sumByKur, sumByKurWatchedAll) {
                 }, marker: {
                     enabled: false
                 }
+            }],
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 600
+                },
+                chartOptions: {
+                    legend: {
+                        layout: 'horizontal',
+                        align: 'center',
+                        verticalAlign: 'bottom'
+                    }
+                }
             }]
-    }
+        }
 
-    // グラフを作成
-    chart = new Highcharts.Chart(options);
-
+    });
 }
 function drawHitRate(sumByYear, sumByYearWatchedAll) {
     let hitRate = [];
@@ -151,9 +160,7 @@ function drawHitRate(sumByYear, sumByYearWatchedAll) {
         yearName.push(year);
     }
     // グラフオプションを指定
-    const options = {
-        // 出力先を指定
-        chart: { renderTo: "hitrate" },
+    Highcharts.chart('hitrate', {
         title: {
             text: "Annual Statistics"
         },
@@ -182,10 +189,21 @@ function drawHitRate(sumByYear, sumByYearWatchedAll) {
             { name: "視聴", data: sumByYearArray },
             { name: "完走", data: sumByYearWatchedAllArray },
             { name: "完走率", data: hitRate, yAxis: 1, tooltip: { valueSuffix: ' %' } }
-        ]
-    }
-
-    // グラフを作成
-    chart = new Highcharts.Chart(options);
+        ],
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 600
+                },
+                chartOptions: {
+                    legend: {
+                        layout: 'horizontal',
+                        align: 'center',
+                        verticalAlign: 'bottom'
+                    }
+                }
+            }]
+        }
+    });
 
 }
