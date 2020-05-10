@@ -121,6 +121,8 @@ function draw(sumByKur, sumByKurWatchedAll) {
             {
                 name: "視聴(移動平均)", linkedTo: 'watched', type: 'sma', params: {
                     period: 4
+                }, marker: {
+                    enabled: false
                 }
             },
             {
