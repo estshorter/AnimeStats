@@ -12,7 +12,7 @@ class MapCounter extends Map {
     }
 }
 
-$.getJSON("animes.json", function (animes) {
+$.getJSON("https://estshorter.github.io/AnimeStats/data/animes.json", function (animes) {
     const animeStats = jsonParser(animes.sort(compareYearKurDec));
     let yearResultString = ""
     for (const year of animeStats.sumByYear.keys()) {
