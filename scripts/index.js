@@ -127,14 +127,14 @@ function drawAnimeHistory(sumByCour, sumByCourWatchedAll) {
                     period: 4
                 }, marker: {
                     enabled: false
-                }
+                }, tooltip: { valueDecimals: 2 }
             },
             {
                 name: "完走(移動平均)", linkedTo: 'watchedToLast', type: 'sma', params: {
                     period: 4
                 }, marker: {
                     enabled: false
-                }
+                }, tooltip: { valueDecimals: 2 }
             }],
         responsive: {
             rules: [{
@@ -160,7 +160,7 @@ function drawHitRate(sumByYear, sumByYearWatchedAll) {
     let yearName = [];
     const sumByYearAsc = new Map([...sumByYear.entries()].sort());
     for (const year of sumByYearAsc.keys()) {
-        hitRate.push(Math.round(sumByYearWatchedAll.get(year) / sumByYear.get(year) * 100 * 10) / 10);
+        hitRate.push(sumByYearWatchedAll.get(year) / sumByYear.get(year) * 100);
         sumByYearArray.push(sumByYear.get(year));
         sumByYearWatchedAllArray.push(sumByYearWatchedAll.get(year));
         yearName.push(year);
@@ -194,7 +194,7 @@ function drawHitRate(sumByYear, sumByYearWatchedAll) {
         series: [
             { name: "視聴", data: sumByYearArray },
             { name: "完走", data: sumByYearWatchedAllArray },
-            { name: "完走率", data: hitRate, yAxis: 1, tooltip: { valueSuffix: ' %' } }
+            { name: "完走率", data: hitRate, yAxis: 1, tooltip: { valueSuffix: ' %', valueDecimals: 1 } }
         ],
         responsive: {
             rules: [{
