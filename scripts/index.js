@@ -60,7 +60,7 @@ function animesJSONParser(animes) {
         const yearCour = `${anime.year}.${anime.cour}`
         const year = anime.year
         if (!sumByCour.has(yearCour)) {
-            message += `<th colspan="3">${yearCour}</th>`
+            message += `<th colspan="2">${yearCour}</th>`
         }
         sumByYear.increment(year)
         if (anime.watchedToLast) {
