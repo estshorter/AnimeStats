@@ -16,16 +16,19 @@ import (
 	"strings"
 )
 
-type animes map[int]animesYear
-
-type animesYear struct {
-	Cours            map[int]animesCour `json:"cours"`
-	Year             int                `json:"year"`
-	Num              int                `json:"num"`
-	NumWatchedToLast int                `json:"numWatchedToLast"`
+type animeAll struct {
+	Years            map[int]animeYear `json:"years"`
+	Num              int               `json:"num"`
+	NumWatchedToLast int               `json:"numWatchedToLast"`
+}
+type animeYear struct {
+	Cours            map[int]animeCour `json:"cours"`
+	Year             int               `json:"year"`
+	Num              int               `json:"num"`
+	NumWatchedToLast int               `json:"numWatchedToLast"`
 }
 
-type animesCour struct {
+type animeCour struct {
 	Animes           []anime `json:"animes"`
 	Cour             int     `json:"cour"`
 	Num              int     `json:"num"`
@@ -72,8 +75,8 @@ func readAnimeHistory(filepath string) ([]byte, error) {
 	return data, nil
 }
 
-func parse(animesBytes []byte) (animes, error) {
-	animes := make(animes)
+func parse(animesBytes []byte) (*animeAll, error) {
+	animes := &animeAll{make(map[int]animeYear), 0, 0}
 	var year, cour int
 	var err error
 	scanner := bufio.NewScanner(bytes.NewReader(animesBytes))
@@ -111,32 +114,35 @@ func parse(animesBytes []byte) (animes, error) {
 	return animes, nil
 }
 
-func setAnime(anm anime, anms animes) {
-	v1, ok := anms[anm.Year]
+func setAnime(anm anime, anms *animeAll) {
+	watchedToLastInt := watchedToLastToInt(anm)
+	v1, ok := anms.Years[anm.Year]
 	if !ok {
-		v1 = animesYear{
-			make(map[int]animesCour),
+		v1 = animeYear{
+			make(map[int]animeCour),
 			anm.Year,
 			1,
-			watchedToLastToInt(anm)}
+			watchedToLastInt}
 	} else {
 		v1.Num++
-		v1.NumWatchedToLast += watchedToLastToInt(anm)
+		v1.NumWatchedToLast += watchedToLastInt
 	}
-	anms[anm.Year] = v1
+	anms.Years[anm.Year] = v1
 	v2, ok := v1.Cours[anm.Cour]
 	if !ok {
-		v2 = animesCour{
+		v2 = animeCour{
 			[]anime{anm},
 			anm.Cour,
 			1,
-			watchedToLastToInt(anm)}
+			watchedToLastInt}
 	} else {
 		v2.Animes = append(v2.Animes, anm)
 		v2.Num++
-		v2.NumWatchedToLast += watchedToLastToInt(anm)
+		v2.NumWatchedToLast += watchedToLastInt
 	}
 	v1.Cours[anm.Cour] = v2
+	anms.Num++
+	anms.NumWatchedToLast += watchedToLastInt
 }
 
 func watchedToLastToInt(anime anime) int {
