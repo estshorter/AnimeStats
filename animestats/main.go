@@ -16,6 +16,21 @@ import (
 	"strings"
 )
 
+type animes map[int]animesYear
+
+type animesYear struct {
+	Cours            map[int]animesCour `json:"cours"`
+	Year             int                `json:"year"`
+	Num              int                `json:"num"`
+	NumWatchedToLast int                `json:"numWatchedToLast"`
+}
+
+type animesCour struct {
+	Animes           []anime `json:"animes"`
+	Cour             int     `json:"cour"`
+	Num              int     `json:"num"`
+	NumWatchedToLast int     `json:"numWatchedToLast"`
+}
 type anime struct {
 	Title         string `json:"title"`
 	Year          int    `json:"year"`
@@ -57,8 +72,8 @@ func readAnimeHistory(filepath string) ([]byte, error) {
 	return data, nil
 }
 
-func parse(animesBytes []byte) ([]anime, error) {
-	var animes []anime
+func parse(animesBytes []byte) (animes, error) {
+	animes := make(animes)
 	var year, cour int
 	var err error
 	scanner := bufio.NewScanner(bytes.NewReader(animesBytes))
@@ -90,10 +105,45 @@ func parse(animesBytes []byte) ([]anime, error) {
 				cour,
 				watchedToLast,
 			}
-			animes = append(animes, anime)
+			setAnime(anime, animes)
 		}
 	}
 	return animes, nil
+}
+
+func setAnime(anm anime, anms animes) {
+	v1, ok := anms[anm.Year]
+	if !ok {
+		v1 = animesYear{
+			make(map[int]animesCour),
+			anm.Year,
+			1,
+			watchedToLastToInt(anm)}
+	} else {
+		v1.Num++
+		v1.NumWatchedToLast += watchedToLastToInt(anm)
+	}
+	anms[anm.Year] = v1
+	v2, ok := v1.Cours[anm.Cour]
+	if !ok {
+		v2 = animesCour{
+			[]anime{anm},
+			anm.Cour,
+			1,
+			watchedToLastToInt(anm)}
+	} else {
+		v2.Animes = append(v2.Animes, anm)
+		v2.Num++
+		v2.NumWatchedToLast += watchedToLastToInt(anm)
+	}
+	v1.Cours[anm.Cour] = v2
+}
+
+func watchedToLastToInt(anime anime) int {
+	if anime.WatchedToLast {
+		return 1
+	}
+	return 0
 }
 
 func marshal(pathToAnimeHistory, outputFileName string) error {
@@ -105,7 +155,7 @@ func marshal(pathToAnimeHistory, outputFileName string) error {
 	if err != nil {
 		return err
 	}
-	sortAnimesDes(animesJSON)
+	// sortAnimesDes(animesJSON)
 	jsonBytes, err := json.MarshalIndent(animesJSON, "", "    ")
 	if err != nil {
 		return err
@@ -125,7 +175,7 @@ func unMarshal(jsonToBeUnmarshalled, unmarshalled string) error {
 	if err := json.Unmarshal(animesBytes, &animes); err != nil {
 		return err
 	}
-	sortAnimesDes(animes)
+	// sortAnimesDes(animes)
 	year := 0
 	cour := 0
 	var b strings.Builder
@@ -170,7 +220,7 @@ func main() {
 			return
 		}
 
-		fmt.Println("Marshalling..")
+		fmt.Println("Converting to JSON...")
 		if err := marshal(filepath.Clean(src), filepath.Clean(dst)); err != nil {
 			log.Fatal(err)
 		}
@@ -184,7 +234,7 @@ func main() {
 			return
 		}
 
-		fmt.Println("Unmarshalling..")
+		fmt.Println("Converting to MD..")
 		if err := unMarshal(filepath.Clean(src), filepath.Clean(dst)); err != nil {
 			log.Fatal(err)
 		}
