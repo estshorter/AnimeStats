@@ -31,6 +31,7 @@
 }
 
 table {
+    padding-top: 9px;
     width: 100%; max-width: 800px;
     /* width: auto; */
     border-spacing: 0;
@@ -44,10 +45,6 @@ table th {
     font-weight: bold;
     line-height: 120%;
     text-align: left;
-}
-
-table tr:first-child th {
-    border-bottom: 1px solid #ffffff;
 }
 
 table th {

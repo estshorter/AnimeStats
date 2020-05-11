@@ -20,7 +20,7 @@ fetch("https://estshorter.github.io/AnimeStats/data/animes.json")
     });
 
 function createAnimeHistoryTable(animesJson) {
-    let html = "<table><tr><th>タイトル</th></tr>";
+    let html = "<table>";
     const years = Object.keys(animesJson);
     years.reverse()
     for (const year of years) {
