@@ -1,7 +1,6 @@
 fetch("https://estshorter.github.io/AnimeStats/data/animes.json")
     .then(response => {
         return response.json().then(animes => {
-            // const animeStats = animesJSONParser(animes.sort(compareYearCourDec));
             // assume animes is sorted in descending order
             const table = createAnimeHistoryTable(animes.years);
             let yearResultString = ""
@@ -19,24 +18,6 @@ fetch("https://estshorter.github.io/AnimeStats/data/animes.json")
             drawHitRate(animes.years);
         });
     });
-
-// function compareYearCourDec(a, b) {
-//     let r = 0;
-//     if (a.year > b.year) { r = -1; }
-//     else if (a.year < b.year) { r = 1; }
-//     else {
-//         r = compareCourDec(a, b)
-//     }
-
-//     return r;
-// }
-
-// function compareCourDec(a, b) {
-//     let r = 0;
-//     if (a.cour > b.cour) { r = -1; }
-//     else if (a.cour < b.cour) { r = 1; }
-//     return r;
-// }
 
 function createAnimeHistoryTable(animesJson) {
     let html = "<table><tr><th>タイトル</th><th>最後まで見たか</th></tr>";
