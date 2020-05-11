@@ -3,7 +3,7 @@ fetch("https://estshorter.github.io/AnimeStats/data/animes.json")
         return response.json().then(animes => {
             // const animeStats = animesJSONParser(animes.sort(compareYearCourDec));
             // assume animes is sorted in descending order
-            const table = animesJSONParser(animes.years);
+            const table = createAnimeHistoryTable(animes.years);
             let yearResultString = ""
             const years = Object.keys(animes.years);
             years.reverse()
@@ -38,7 +38,7 @@ fetch("https://estshorter.github.io/AnimeStats/data/animes.json")
 //     return r;
 // }
 
-function animesJSONParser(animesJson) {
+function createAnimeHistoryTable(animesJson) {
     let html = "<table><tr><th>タイトル</th><th>最後まで見たか</th></tr>";
     const years = Object.keys(animesJson);
     years.reverse()
