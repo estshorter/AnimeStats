@@ -47,7 +47,6 @@ table tr:nth-child(2n+1) {
 
 table tr:hover {
     background: #bbd4ee;
-    cursor: pointer;
 }
 
 #notWatchedAll {
