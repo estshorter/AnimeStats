@@ -11,6 +11,9 @@ fetch("https://estshorter.github.io/AnimeStats/data/animes.json")
                 plotOptions: {
                     series: {
                         animation: false
+                    },
+                    sma: {
+                        showInLegend: true
                     }
                 }
             });
