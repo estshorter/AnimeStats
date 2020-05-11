@@ -22,10 +22,9 @@ fetch("https://estshorter.github.io/AnimeStats/data/animes.json")
             }
             const hitrateAll = (animeStats.sumWatchedAll / animeStats.sum * 100).toFixed(1)
             yearResultString += `All : ${animeStats.sumWatchedAll}/${animeStats.sum}, ${hitrateAll}%`
-            $('#sample-result').html(`<p>${yearResultString}</p>${animeStats.message}`);
+            document.getElementById("annualReport").innerHTML = `<p>${yearResultString}</p>${animeStats.message}`;
             draw(animeStats.sumByCour, animeStats.sumByCourWatchedAll);
             drawHitRate(animeStats.sumByYear, animeStats.sumByYearWatchedAll);
-
         });
     });
 
@@ -101,7 +100,7 @@ function draw(sumByCour, sumByCourWatchedAll) {
         courName.push(courYear);
     }
     // グラフオプションを指定
-    Highcharts.chart('container', {
+    Highcharts.chart('animeHistory', {
         title: {
             text: "アニメ視聴数"
         },
