@@ -147,23 +147,20 @@ func unMarshal(jsonToBeUnmarshalled, unmarshalled string) error {
 }
 
 func main() {
-	var unmarshal bool
+	var toJSON, toMd bool
 	var src, dst string
-	flag.BoolVar(&unmarshal, "um", false, "True if unmarshalling (json -> md) else marshalling (md -> json)")
-	flag.StringVar(&src, "s", "", "Src file")
-	flag.StringVar(&dst, "d", "", "Destination file")
+	flag.BoolVar(&toJSON, "json", false, "Convert to json from md")
+	flag.BoolVar(&toMd, "md", true, "Convert to md from json")
+	flag.StringVar(&src, "s", "../data/AnimeHistory.md", "Src file")
+	flag.StringVar(&dst, "d", "../data/animes.json", "Destination file")
 
 	flag.Parse()
 
-	if src == "" {
-		fmt.Printf("Please specify a src file")
-		return
-	} else if dst == "" {
-		fmt.Printf("Please specify a destination file")
-		return
+	if toJSON {
+		toMd = false
 	}
 
-	if !unmarshal {
+	if toMd {
 		// md -> json
 		if filepath.Ext(src) != ".md" {
 			fmt.Printf("Please specify a md file as a src file")
