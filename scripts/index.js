@@ -1,32 +1,22 @@
-class MapCounter extends Map {
-    get(key) {
-        if (!this.has(key)) return 0;
-        return super.get(key);
-    }
-
-    increment(key) {
-        super.set(key, this.get(key) + 1);
-    }
-    constructor(entries) {
-        super(entries);
-    }
-}
-
 fetch("https://estshorter.github.io/AnimeStats/data/animes.json")
     .then(response => {
         return response.json().then(animes => {
             // const animeStats = animesJSONParser(animes.sort(compareYearCourDec));
             // assume animes is sorted in descending order
-            const animeStats = animesJSONParser(animes);
+            const table = animesJSONParser(animes.years);
             let yearResultString = ""
-            for (const year of animeStats.sumByYear.keys()) {
-                yearResultString += `${year}: ${animeStats.sumByYearWatchedAll.get(year)}/${animeStats.sumByYear.get(year)}<br>`
+            const years = Object.keys(animes.years);
+            years.reverse()
+            for (const year of years) {
+                sumByYear = animes.years[year].num
+                sumByYearWatchedAll = animes.years[year].numWatchedToLast
+                yearResultString += `${year}: ${sumByYearWatchedAll}/${sumByYear}<br>`
             }
-            const hitrateAll = (animeStats.sumWatchedAll / animeStats.sum * 100).toFixed(1)
-            yearResultString += `All : ${animeStats.sumWatchedAll}/${animeStats.sum}, ${hitrateAll}%`
-            document.getElementById("annualReport").innerHTML = `<p>${yearResultString}</p>${animeStats.message}`;
-            drawAnimeHistory(animeStats.sumByCour, animeStats.sumByCourWatchedAll);
-            drawHitRate(animeStats.sumByYear, animeStats.sumByYearWatchedAll);
+            const hitrateAll = (animes.numWatchedToLast / animes.num * 100).toFixed(1)
+            yearResultString += `All : ${animes.numWatchedToLast}/${animes.num}, ${hitrateAll}%`
+            document.getElementById("annualReport").innerHTML = `<p>${yearResultString}</p>${table}`;
+            drawAnimeHistory(animes.years);
+            drawHitRate(animes.years);
         });
     });
 
@@ -48,55 +38,47 @@ function compareCourDec(a, b) {
     return r;
 }
 
-function animesJSONParser(animes) {
-    let message = "<table><tr><th>タイトル</th><th>最後まで見たか</th></tr>";
-    let sumByYear = new MapCounter();
-    let sumByYearWatchedAll = new MapCounter();
-    let sumByCour = new MapCounter();
-    let sumByCourWatchedAll = new MapCounter();
-    const sum = animes.length;
-    let sumWatchedAll = 0;
-    for (anime of animes) {
-        const yearCour = `${anime.year}.${anime.cour}`
-        const year = anime.year
-        if (!sumByCour.has(yearCour)) {
-            message += `<th colspan="2">${yearCour}</th>`
-        }
-        sumByYear.increment(year)
-        if (anime.watchedToLast) {
-            message += "<tr><td>";
-        } else {
-            message += "<tr id = \"notWatchedAll\"><td>";
-        }
-        message += anime.title;
-        message += "</td><td>"
-        message += anime.watchedToLast;
-        message += "</td></tr>"
-
-        sumByCour.increment(yearCour)
-
-        if (anime.watchedToLast) {
-            sumWatchedAll++
-            sumByYearWatchedAll.increment(year)
-            sumByCourWatchedAll.increment(yearCour)
+function animesJSONParser(animesJson) {
+    let html = "<table><tr><th>タイトル</th><th>最後まで見たか</th></tr>";
+    const years = Object.keys(animesJson);
+    years.reverse()
+    for (const year of years) {
+        const animesYear = animesJson[year]
+        const cours = Object.keys(animesYear.cours);
+        cours.reverse()
+        let showYearCour = true
+        for (const cour of cours) {
+            for (const anime of animesYear.cours[cour].animes) {
+                if (showYearCour) {
+                    html += `<th colspan="2">${anime.year}.${anime.cour}</th>`
+                    showYearCour = false
+                }
+                if (anime.watchedToLast) {
+                    html += "<tr><td>";
+                } else {
+                    html += "<tr id = \"notWatchedAll\"><td>";
+                }
+                html += `${anime.title}</td><td>${anime.watchedToLast}</td></tr>`;
+            }
         }
     }
-    message += "</table>"
-
-    const ret = { message, sum, sumWatchedAll, sumByYear, sumByYearWatchedAll, sumByCour, sumByCourWatchedAll }
-    return ret;
+    html += "</table>"
+    return html;
 }
 
-function drawAnimeHistory(sumByCour, sumByCourWatchedAll) {
-    let sumByCourArray = [];
-    let sumByCourWatchedAllArray = [];
-    let courName = [];
-    const sumByCourAsc = new Map([...sumByCour.entries()].sort());
-    for (const courYear of sumByCourAsc.keys()) {
-        sumByCourArray.push(sumByCour.get(courYear));
-        sumByCourWatchedAllArray.push(sumByCourWatchedAll.get(courYear));
-        courName.push(courYear);
+function drawAnimeHistory(animesJson) {
+    const sumByCourArray = [];
+    const sumByCourWatchedAllArray = [];
+    const courName = [];
+    for (const year of Object.keys(animesJson)) {
+        const animesYear = animesJson[year]
+        for (const cour of Object.keys(animesYear.cours)) {
+            sumByCourArray.push(animesYear.cours[cour].num);
+            sumByCourWatchedAllArray.push(animesYear.cours[cour].numWatchedToLast);
+            courName.push(`${year}.${cour}`);
+        }
     }
+
     // グラフオプションを指定
     Highcharts.chart('animeHistory', {
         title: {
@@ -151,18 +133,19 @@ function drawAnimeHistory(sumByCour, sumByCourWatchedAll) {
 
     });
 }
-function drawHitRate(sumByYear, sumByYearWatchedAll) {
-    let hitRate = [];
-    let sumByYearArray = [];
-    let sumByYearWatchedAllArray = [];
-    let yearName = [];
-    const sumByYearAsc = new Map([...sumByYear.entries()].sort());
-    for (const year of sumByYearAsc.keys()) {
-        hitRate.push(sumByYearWatchedAll.get(year) / sumByYear.get(year) * 100);
-        sumByYearArray.push(sumByYear.get(year));
-        sumByYearWatchedAllArray.push(sumByYearWatchedAll.get(year));
+function drawHitRate(animesJson) {
+    const hitRate = [];
+    const sumByYearArray = [];
+    const sumByYearWatchedAllArray = [];
+    const yearName = [];
+    for (const year of Object.keys(animesJson)) {
+        const animesYear = animesJson[year]
+        hitRate.push(animesYear.numWatchedToLast / animesYear.num * 100);
+        sumByYearArray.push(animesYear.num);
+        sumByYearWatchedAllArray.push(animesYear.numWatchedToLast);
         yearName.push(year);
     }
+
     // グラフオプションを指定
     Highcharts.chart('hitrate', {
         title: {
