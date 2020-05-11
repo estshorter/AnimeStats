@@ -14,7 +14,7 @@ fetch("https://estshorter.github.io/AnimeStats/data/animes.json")
             }
             const hitrateAll = (animes.numWatchedToLast / animes.num * 100).toFixed(1)
             yearResultString += `All : ${animes.numWatchedToLast}/${animes.num}, ${hitrateAll}%`
-            document.getElementById("annualReport").innerHTML = `<p>${yearResultString}</p>${table}`;
+            document.getElementById("report").innerHTML = `<p>${yearResultString}</p>${table}`;
             drawAnimeHistory(animes.years);
             drawHitRate(animes.years);
         });
