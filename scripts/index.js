@@ -15,7 +15,7 @@ class MapCounter extends Map {
 fetch("https://estshorter.github.io/AnimeStats/data/animes.json")
     .then(response => {
         return response.json().then(animes => {
-            const animeStats = jsonParser(animes.sort(compareYearCourDec));
+            const animeStats = animesJSONParser(animes.sort(compareYearCourDec));
             let yearResultString = ""
             for (const year of animeStats.sumByYear.keys()) {
                 yearResultString += getYearResultString(animeStats, year)
@@ -23,7 +23,7 @@ fetch("https://estshorter.github.io/AnimeStats/data/animes.json")
             const hitrateAll = (animeStats.sumWatchedAll / animeStats.sum * 100).toFixed(1)
             yearResultString += `All : ${animeStats.sumWatchedAll}/${animeStats.sum}, ${hitrateAll}%`
             document.getElementById("annualReport").innerHTML = `<p>${yearResultString}</p>${animeStats.message}`;
-            draw(animeStats.sumByCour, animeStats.sumByCourWatchedAll);
+            drawAnimeHistory(animeStats.sumByCour, animeStats.sumByCourWatchedAll);
             drawHitRate(animeStats.sumByYear, animeStats.sumByYearWatchedAll);
         });
     });
@@ -50,7 +50,7 @@ function getYearResultString(data, year) {
     return `${year}: ${data.sumByYearWatchedAll.get(year)}/${data.sumByYear.get(year)}<br>`
 }
 
-function jsonParser(animes) {
+function animesJSONParser(animes) {
     let message = "<table><tr><th>タイトル</th><th>最後まで見たか</th></tr>";
     let sumByYear = new MapCounter();
     let sumByYearWatchedAll = new MapCounter();
@@ -89,7 +89,7 @@ function jsonParser(animes) {
     return ret;
 }
 
-function draw(sumByCour, sumByCourWatchedAll) {
+function drawAnimeHistory(sumByCour, sumByCourWatchedAll) {
     let sumByCourArray = [];
     let sumByCourWatchedAllArray = [];
     let courName = [];
