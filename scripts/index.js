@@ -46,8 +46,8 @@ function animesJSONParser(animesJson) {
         const animesYear = animesJson[year]
         const cours = Object.keys(animesYear.cours);
         cours.reverse()
-        let showYearCour = true
         for (const cour of cours) {
+            let showYearCour = true
             for (const anime of animesYear.cours[cour].animes) {
                 if (showYearCour) {
                     html += `<th colspan="2">${anime.year}.${anime.cour}</th>`
