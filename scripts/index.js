@@ -20,7 +20,7 @@ fetch("https://estshorter.github.io/AnimeStats/data/animes.json")
     });
 
 function createAnimeHistoryTable(animesJson) {
-    let html = "<table><tr><th>タイトル</th><th>最後まで見たか</th></tr>";
+    let html = "<table><tr><th>タイトル</th></tr>";
     const years = Object.keys(animesJson);
     years.reverse()
     for (const year of years) {
@@ -31,15 +31,15 @@ function createAnimeHistoryTable(animesJson) {
             let showYearCour = true
             for (const anime of animesYear.cours[cour].animes) {
                 if (showYearCour) {
-                    html += `<th colspan="2">${anime.year}.${anime.cour}</th>`
+                    html += `<th>${anime.year}.${anime.cour}</th>`
                     showYearCour = false
                 }
                 if (anime.watchedToLast) {
                     html += "<tr><td>";
                 } else {
-                    html += "<tr id = \"notWatchedAll\"><td>";
+                    html += '<tr id ="notWatchedAll"><td>';
                 }
-                html += `${anime.title}</td><td>${anime.watchedToLast}</td></tr>`;
+                html += `${anime.title}</td></tr>`;
             }
         }
     }
