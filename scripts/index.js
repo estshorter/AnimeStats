@@ -4,15 +4,15 @@ fetch("https://estshorter.github.io/AnimeStats/data/animes.json")
             // assume animes is sorted in descending order
             const table = createAnimeHistoryTable(animes.years);
             let yearResultString = ""
-            const years = Object.keys(animes.years);
-            years.reverse()
-            for (const year of years) {
-                sumByYear = animes.years[year].num
-                sumByYearWatchedAll = animes.years[year].numWatchedToLast
-                yearResultString += `${year}: ${sumByYearWatchedAll}/${sumByYear}<br>`
-            }
+            // const years = Object.keys(animes.years);
+            // years.reverse()
+            // for (const year of years) {
+            //     sumByYear = animes.years[year].num
+            //     sumByYearWatchedAll = animes.years[year].numWatchedToLast
+            //     yearResultString += `${year}: ${sumByYearWatchedAll}/${sumByYear}<br>`
+            // }
             const hitrateAll = (animes.numWatchedToLast / animes.num * 100).toFixed(1)
-            yearResultString += `All : ${animes.numWatchedToLast}/${animes.num}, ${hitrateAll}%`
+            yearResultString += `全期間完走率: ${animes.numWatchedToLast}/${animes.num} = ${hitrateAll}%`
             document.getElementById("report").innerHTML = `<p>${yearResultString}</p>${table}`;
             drawAnimeHistory(animes.years);
             drawHitRate(animes.years);
