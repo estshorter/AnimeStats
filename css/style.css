@@ -53,3 +53,15 @@ table tr:hover {
 #notWatchedAll {
     background-color: #cfcfcf
 }
+
+#animeHistory {
+    width: 100%; max-width: 600px;
+}
+
+#hitrate{
+    width: 100%; max-width: 600px;
+}
+
+#app{
+    padding-left: 20px;
+}
