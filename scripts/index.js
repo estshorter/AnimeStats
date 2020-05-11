@@ -12,33 +12,38 @@ class MapCounter extends Map {
     }
 }
 
-$.getJSON("https://estshorter.github.io/AnimeStats/data/animes.json", function (animes) {
-    const animeStats = jsonParser(animes.sort(compareYearKurDec));
-    let yearResultString = ""
-    for (const year of animeStats.sumByYear.keys()) {
-        yearResultString += getYearResultString(animeStats, year)
-    }
-    const hitrateAll = (animeStats.sumWatchedAll / animeStats.sum * 100).toFixed(1)
-    yearResultString += `All : ${animeStats.sumWatchedAll}/${animeStats.sum}, ${hitrateAll}%`
-    $('#sample-result').html(`<p>${yearResultString}</p>${animeStats.message}`);
-    draw(animeStats.sumByKur, animeStats.sumByKurWatchedAll);
-    drawHitRate(animeStats.sumByYear, animeStats.sumByYearWatchedAll);
-});
-function compareYearKurDec(a, b) {
+fetch("https://estshorter.github.io/AnimeStats/data/animes.json")
+    .then(response => {
+        return response.json().then(animes => {
+            const animeStats = jsonParser(animes.sort(compareYearCourDec));
+            let yearResultString = ""
+            for (const year of animeStats.sumByYear.keys()) {
+                yearResultString += getYearResultString(animeStats, year)
+            }
+            const hitrateAll = (animeStats.sumWatchedAll / animeStats.sum * 100).toFixed(1)
+            yearResultString += `All : ${animeStats.sumWatchedAll}/${animeStats.sum}, ${hitrateAll}%`
+            $('#sample-result').html(`<p>${yearResultString}</p>${animeStats.message}`);
+            draw(animeStats.sumByCour, animeStats.sumByCourWatchedAll);
+            drawHitRate(animeStats.sumByYear, animeStats.sumByYearWatchedAll);
+
+        });
+    });
+
+function compareYearCourDec(a, b) {
     let r = 0;
     if (a.year > b.year) { r = -1; }
     else if (a.year < b.year) { r = 1; }
     else {
-        r = compareKurDec(a, b)
+        r = compareCourDec(a, b)
     }
 
     return r;
 }
 
-function compareKurDec(a, b) {
+function compareCourDec(a, b) {
     let r = 0;
-    if (a.kur > b.kur) { r = -1; }
-    else if (a.kur < b.kur) { r = 1; }
+    if (a.cour > b.cour) { r = -1; }
+    else if (a.cour < b.cour) { r = 1; }
     return r;
 }
 
@@ -50,15 +55,15 @@ function jsonParser(animes) {
     let message = "<table><tr><th>タイトル</th><th>最後まで見たか</th></tr>";
     let sumByYear = new MapCounter();
     let sumByYearWatchedAll = new MapCounter();
-    let sumByKur = new MapCounter();
-    let sumByKurWatchedAll = new MapCounter();
+    let sumByCour = new MapCounter();
+    let sumByCourWatchedAll = new MapCounter();
     const sum = animes.length;
     let sumWatchedAll = 0;
     for (anime of animes) {
-        const yearKur = `${anime.year}.${anime.kur}`
+        const yearCour = `${anime.year}.${anime.cour}`
         const year = anime.year
-        if (!sumByKur.has(yearKur)) {
-            message += `<th colspan="3">${yearKur}</th>`
+        if (!sumByCour.has(yearCour)) {
+            message += `<th colspan="3">${yearCour}</th>`
         }
         sumByYear.increment(year)
         if (anime.watchedToLast) {
@@ -71,29 +76,29 @@ function jsonParser(animes) {
         message += anime.watchedToLast;
         message += "</td></tr>"
 
-        sumByKur.increment(yearKur)
+        sumByCour.increment(yearCour)
 
         if (anime.watchedToLast) {
             sumWatchedAll++
             sumByYearWatchedAll.increment(year)
-            sumByKurWatchedAll.increment(yearKur)
+            sumByCourWatchedAll.increment(yearCour)
         }
     }
     message += "</table>"
 
-    const ret = { message, sum, sumWatchedAll, sumByYear, sumByYearWatchedAll, sumByKur, sumByKurWatchedAll }
+    const ret = { message, sum, sumWatchedAll, sumByYear, sumByYearWatchedAll, sumByCour, sumByCourWatchedAll }
     return ret;
 }
 
-function draw(sumByKur, sumByKurWatchedAll) {
-    let sumByKurArray = [];
-    let sumByKurWatchedAllArray = [];
-    let kurName = [];
-    const sumByKurAsc = new Map([...sumByKur.entries()].sort());
-    for (const kurYear of sumByKurAsc.keys()) {
-        sumByKurArray.push(sumByKur.get(kurYear));
-        sumByKurWatchedAllArray.push(sumByKurWatchedAll.get(kurYear));
-        kurName.push(kurYear);
+function draw(sumByCour, sumByCourWatchedAll) {
+    let sumByCourArray = [];
+    let sumByCourWatchedAllArray = [];
+    let courName = [];
+    const sumByCourAsc = new Map([...sumByCour.entries()].sort());
+    for (const courYear of sumByCourAsc.keys()) {
+        sumByCourArray.push(sumByCour.get(courYear));
+        sumByCourWatchedAllArray.push(sumByCourWatchedAll.get(courYear));
+        courName.push(courYear);
     }
     // グラフオプションを指定
     Highcharts.chart('container', {
@@ -101,7 +106,7 @@ function draw(sumByKur, sumByKurWatchedAll) {
             text: "アニメ視聴数"
         },
         xAxis: {
-            categories: kurName
+            categories: courName
         },
         yAxis: {
             title: {
@@ -116,8 +121,8 @@ function draw(sumByKur, sumByKurWatchedAll) {
         },
         // データ系列を作成
         series: [
-            { name: "視聴", data: sumByKurArray, id: 'watched' },
-            { name: "完走", data: sumByKurWatchedAllArray, id: 'watchedToLast' },
+            { name: "視聴", data: sumByCourArray, id: 'watched' },
+            { name: "完走", data: sumByCourWatchedAllArray, id: 'watchedToLast' },
             {
                 name: "視聴(移動平均)", linkedTo: 'watched', type: 'sma', params: {
                     period: 4

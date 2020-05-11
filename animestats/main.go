@@ -19,25 +19,25 @@ import (
 type anime struct {
 	Title         string `json:"title"`
 	Year          int    `json:"year"`
-	Kur           int    `json:"kur"`
+	Cour          int    `json:"cour"`
 	WatchedToLast bool   `json:"watchedToLast"`
 }
 
 func sortAnimesAsc(animes []anime) {
-	//ascending by year and kur
+	//ascending by year and cour
 	sort.Slice(animes, func(i, j int) bool {
 		if animes[i].Year == animes[j].Year {
-			return animes[i].Kur < animes[j].Kur
+			return animes[i].Cour < animes[j].Cour
 		}
 		return animes[i].Year < animes[j].Year
 	})
 }
 
 func sortAnimesDes(animes []anime) {
-	//ascending by year and kur
+	//ascending by year and cour
 	sort.Slice(animes, func(i, j int) bool {
 		if animes[i].Year == animes[j].Year {
-			return animes[i].Kur > animes[j].Kur
+			return animes[i].Cour > animes[j].Cour
 		}
 		return animes[i].Year > animes[j].Year
 	})
@@ -59,21 +59,21 @@ func readAnimeHistory(filepath string) ([]byte, error) {
 
 func parse(animesBytes []byte) ([]anime, error) {
 	var animes []anime
-	var year, kur int
+	var year, cour int
 	var err error
 	scanner := bufio.NewScanner(bytes.NewReader(animesBytes))
 	for scanner.Scan() {
 		if strings.HasPrefix(scanner.Text(), "##") {
 			trimmed := strings.Trim(scanner.Text()[2:], " ")
-			yearKur := strings.Split(trimmed, ".")
-			if len(yearKur) != 2 {
-				return nil, errors.New("YearKur cannot be splitted by '.'")
+			yearCour := strings.Split(trimmed, ".")
+			if len(yearCour) != 2 {
+				return nil, errors.New("YearCour cannot be splitted by '.'")
 			}
-			year, err = strconv.Atoi(yearKur[0])
+			year, err = strconv.Atoi(yearCour[0])
 			if err != nil {
 				return nil, err
 			}
-			kur, err = strconv.Atoi(yearKur[1])
+			cour, err = strconv.Atoi(yearCour[1])
 			if err != nil {
 				return nil, err
 			}
@@ -87,7 +87,7 @@ func parse(animesBytes []byte) ([]anime, error) {
 			anime := anime{
 				titleCandidate,
 				year,
-				kur,
+				cour,
 				watchedToLast,
 			}
 			animes = append(animes, anime)
@@ -127,14 +127,14 @@ func unMarshal(jsonToBeUnmarshalled, unmarshalled string) error {
 	}
 	sortAnimesDes(animes)
 	year := 0
-	kur := 0
+	cour := 0
 	var b strings.Builder
 	fmt.Fprint(&b, "# Anime History	\n\n")
 	for _, anime := range animes {
-		if anime.Year != year || anime.Kur != kur {
-			fmt.Fprintf(&b, "## %v.%v\n", anime.Year, anime.Kur)
+		if anime.Year != year || anime.Cour != cour {
+			fmt.Fprintf(&b, "## %v.%v\n", anime.Year, anime.Cour)
 			year = anime.Year
-			kur = anime.Kur
+			cour = anime.Cour
 		}
 		fmt.Fprint(&b, "- ")
 		if !anime.WatchedToLast {
