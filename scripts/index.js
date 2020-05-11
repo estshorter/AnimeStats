@@ -4,13 +4,6 @@ fetch("https://estshorter.github.io/AnimeStats/data/animes.json")
             // assume animes is sorted in descending order
             const table = createAnimeHistoryTable(animes.years);
             let yearResultString = ""
-            // const years = Object.keys(animes.years);
-            // years.reverse()
-            // for (const year of years) {
-            //     sumByYear = animes.years[year].num
-            //     sumByYearWatchedAll = animes.years[year].numWatchedToLast
-            //     yearResultString += `${year}: ${sumByYearWatchedAll}/${sumByYear}<br>`
-            // }
             const hitrateAll = (animes.numWatchedToLast / animes.num * 100).toFixed(1)
             yearResultString += `全期間完走率: ${animes.numWatchedToLast}/${animes.num} = ${hitrateAll}%`
             document.getElementById("report").innerHTML = `<p>${yearResultString}</p>${table}`;
@@ -104,22 +97,7 @@ function drawAnimeHistory(animesJson) {
                 }, marker: {
                     enabled: false
                 }, tooltip: { valueDecimals: 2 }
-            }],
-        responsive: {
-            rules: [{
-                condition: {
-                    maxWidth: 600
-                },
-                chartOptions: {
-                    legend: {
-                        layout: 'horizontal',
-                        align: 'center',
-                        verticalAlign: 'bottom'
-                    }
-                }
             }]
-        }
-
     });
 }
 function drawHitRate(animesJson) {
@@ -165,21 +143,7 @@ function drawHitRate(animesJson) {
             { name: "視聴", data: sumByYearArray },
             { name: "完走", data: sumByYearWatchedAllArray },
             { name: "完走率", data: hitRate, yAxis: 1, tooltip: { valueSuffix: ' %', valueDecimals: 1 } }
-        ],
-        responsive: {
-            rules: [{
-                condition: {
-                    maxWidth: 600
-                },
-                chartOptions: {
-                    legend: {
-                        layout: 'horizontal',
-                        align: 'center',
-                        verticalAlign: 'bottom'
-                    }
-                }
-            }]
-        }
+        ]
     });
 
 }
