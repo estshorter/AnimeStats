@@ -15,10 +15,12 @@ class MapCounter extends Map {
 fetch("https://estshorter.github.io/AnimeStats/data/animes.json")
     .then(response => {
         return response.json().then(animes => {
-            const animeStats = animesJSONParser(animes.sort(compareYearCourDec));
+            // const animeStats = animesJSONParser(animes.sort(compareYearCourDec));
+            // assume animes is sorted in descending order
+            const animeStats = animesJSONParser(animes);
             let yearResultString = ""
             for (const year of animeStats.sumByYear.keys()) {
-                yearResultString += getYearResultString(animeStats, year)
+                yearResultString += `${year}: ${animeStats.sumByYearWatchedAll.get(year)}/${animeStats.sumByYear.get(year)}<br>`
             }
             const hitrateAll = (animeStats.sumWatchedAll / animeStats.sum * 100).toFixed(1)
             yearResultString += `All : ${animeStats.sumWatchedAll}/${animeStats.sum}, ${hitrateAll}%`
@@ -44,10 +46,6 @@ function compareCourDec(a, b) {
     if (a.cour > b.cour) { r = -1; }
     else if (a.cour < b.cour) { r = 1; }
     return r;
-}
-
-function getYearResultString(data, year) {
-    return `${year}: ${data.sumByYearWatchedAll.get(year)}/${data.sumByYear.get(year)}<br>`
 }
 
 function animesJSONParser(animes) {
