@@ -14,6 +14,14 @@ fetch("https://estshorter.github.io/AnimeStats/data/animes.json")
             const hitrateAll = (animes.numWatchedToLast / animes.num * 100).toFixed(1)
             yearResultString += `全期間完走率: ${animes.numWatchedToLast}/${animes.num} = ${hitrateAll}%`
             document.getElementById("report").innerHTML = `<p>${yearResultString}</p>${table}`;
+            Highcharts.setOptions({
+                plotOptions: {
+                    series: {
+                        animation: false
+                    }
+                }
+            });
+
             drawAnimeHistory(animes.years);
             drawHitRate(animes.years);
         });
@@ -63,14 +71,14 @@ function drawAnimeHistory(animesJson) {
     // グラフオプションを指定
     Highcharts.chart('animeHistory', {
         title: {
-            text: "アニメ視聴数"
+            text: "Anime History"
         },
         xAxis: {
             categories: courName
         },
         yAxis: {
             title: {
-                text: 'アニメ数 [-]'
+                text: 'Number of Anime [-]'
             }
         },
         tooltip: {
@@ -137,12 +145,12 @@ function drawHitRate(animesJson) {
         },
         yAxis: [{
             title: {
-                text: 'アニメ数 [-]'
+                text: 'Number of Anime [-]'
             }
         },
         {
             title: {
-                text: '完走率 [%]'
+                text: 'Completion rate [%]'
             },
             opposite: true,
         }],
