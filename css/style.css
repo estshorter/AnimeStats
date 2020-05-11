@@ -13,6 +13,7 @@
 }
 
 #app{
+    padding-top: 10px;
     margin: 0 auto;
     width: 70%;
 }
@@ -32,6 +33,7 @@
 
 table {
     padding-top: 9px;
+    padding-bottom: 20px;
     width: 100%; max-width: 800px;
     /* width: auto; */
     border-spacing: 0;
