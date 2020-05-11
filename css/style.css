@@ -14,8 +14,17 @@
 
 #app{
     margin: 0 auto;
-    width: 50%;
+    width: 70%;
 }
+
+@media screen and (max-width:800px) { 
+    #app{
+        margin: 0 auto;
+        width: 90%;
+    }
+    
+}
+
 
 #notWatchedAll {
     background-color: #cfcfcf
