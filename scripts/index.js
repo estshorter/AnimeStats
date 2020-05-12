@@ -31,11 +31,10 @@ function createAnimeHistoryTable(animesJson) {
             tableHTML += `<th>${animesYear.year}.${animesCour.cour}</th>`
             for (const anime of animesCour.animes) {
                 if (anime.watchedToLast) {
-                    tableHTML += "<tr><td>";
+                    tableHTML += `<tr><td>${anime.title}</td></tr>`;
                 } else {
-                    tableHTML += '<tr id ="notWatchedAll"><td>';
+                    tableHTML += `<tr id ="notWatchedAll"><td${anime.title}</td></tr>`;
                 }
-                tableHTML += `${anime.title}</td></tr>`;
             }
         }
     }
