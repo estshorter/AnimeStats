@@ -4,10 +4,12 @@ async function render() {
     const response = await fetch("https://estshorter.github.io/AnimeStats/data/animes.json")
     const animes = await response.json();
     // assume animes is sorted in descending order
-    const table = createAnimeHistoryTable(animes.years);
+    const tableHTML = createAnimeHistoryTable(animes.years);
     const hitrateAll = (animes.numWatchedToLast / animes.num * 100).toFixed(1);
-    const yearResultString = `全期間完走率: ${animes.numWatchedToLast}/${animes.num} = ${hitrateAll}%`;
-    document.getElementById("report").innerHTML = `<p>${yearResultString}</p>${table}`;
+    document.getElementById("reportHitrate").innerHTML = 
+    `全期間完走率: ${animes.numWatchedToLast}/${animes.num} = ${hitrateAll}%`
+    document.getElementById("reportTable").innerHTML = tableHTML
+
     Highcharts.setOptions({
         plotOptions: {
             series: {
@@ -23,7 +25,7 @@ async function render() {
 }
 
 function createAnimeHistoryTable(animesJson) {
-    let tableHTML = "<table>";
+    let tableHTML = "";
     for (const animesYear of Object.values(animesJson).reverse()) {
         for (const animesCour of Object.values(animesYear.cours).reverse()) {
             tableHTML += `<th>${animesYear.year}.${animesCour.cour}</th>`
@@ -37,7 +39,6 @@ function createAnimeHistoryTable(animesJson) {
             }
         }
     }
-    tableHTML += "</table>"
     return tableHTML;
 }
 
