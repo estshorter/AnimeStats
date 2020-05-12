@@ -152,8 +152,8 @@ func watchedToLastToInt(anime anime) int {
 	return 0
 }
 
-func marshal(pathToAnimeHistory, outputFileName string) error {
-	animes, err := readAnimeHistory(pathToAnimeHistory)
+func convertToJSON(srcMd, dstJSON string) error {
+	animes, err := readAnimeHistory(srcMd)
 	if err != nil {
 		return err
 	}
@@ -166,57 +166,77 @@ func marshal(pathToAnimeHistory, outputFileName string) error {
 	if err != nil {
 		return err
 	}
-	// fmt.Println(string(jsonBytes))
-	ioutil.WriteFile(outputFileName, jsonBytes, os.ModePerm)
+	ioutil.WriteFile(dstJSON, jsonBytes, os.ModePerm)
 	return nil
 }
 
-func unMarshal(jsonToBeUnmarshalled, unmarshalled string) error {
-	animesBytes, err := readAnimeHistory(jsonToBeUnmarshalled)
+func convertToMd(srcJSON, dstMd string) error {
+	animesBytes, err := readAnimeHistory(srcJSON)
 	if err != nil {
 		return err
 	}
 
-	var animes []anime
+	var animes animeAll
 	if err := json.Unmarshal(animesBytes, &animes); err != nil {
 		return err
 	}
 	// sortAnimesDes(animes)
-	year := 0
-	cour := 0
 	var b strings.Builder
 	fmt.Fprint(&b, "# Anime History	\n\n")
-	for _, anime := range animes {
-		if anime.Year != year || anime.Cour != cour {
-			fmt.Fprintf(&b, "## %v.%v\n", anime.Year, anime.Cour)
-			year = anime.Year
-			cour = anime.Cour
+
+	years := sortYearsDec(animes.Years)
+	for _, year := range years {
+		animeYear := animes.Years[year]
+		cours := sortCoursDec(animeYear.Cours)
+		for _, cour := range cours {
+			animeCour := animeYear.Cours[cour]
+			fmt.Fprintf(&b, "## %v.%v\n", year, cour)
+			for _, anime := range animeCour.Animes {
+				fmt.Fprint(&b, "- ")
+				if !anime.WatchedToLast {
+					fmt.Fprint(&b, "#")
+				}
+				fmt.Fprintf(&b, "%v\n", strings.Trim(anime.Title, " "))
+			}
 		}
-		fmt.Fprint(&b, "- ")
-		if !anime.WatchedToLast {
-			fmt.Fprint(&b, "#")
-		}
-		fmt.Fprintf(&b, "%v\n", strings.Trim(anime.Title, " "))
 	}
-	ioutil.WriteFile(unmarshalled, []byte(b.String()), os.ModePerm)
+	ioutil.WriteFile(dstMd, []byte(b.String()), os.ModePerm)
 	return nil
 }
 
+func sortYearsDec(m map[int]animeYear) []int {
+	years := make([]int, 0, len(m))
+	for y := range m {
+		years = append(years, y)
+	}
+	sort.Sort(sort.Reverse(sort.IntSlice(years)))
+	return years
+}
+
+func sortCoursDec(m map[int]animeCour) []int {
+	cours := make([]int, 0, len(m))
+	for c := range m {
+		cours = append(cours, c)
+	}
+	sort.Sort(sort.Reverse(sort.IntSlice(cours)))
+	return cours
+}
+
 func main() {
-	var toJSON, toMd bool
+	var ConverttoJSON, toMd bool
 	var src, dst string
-	flag.BoolVar(&toJSON, "json", false, "Convert to json from md")
+	flag.BoolVar(&ConverttoJSON, "json", false, "Convert to json from md")
 	flag.BoolVar(&toMd, "md", true, "Convert to md from json")
 	flag.StringVar(&src, "s", "../data/AnimeHistory.md", "Src file")
 	flag.StringVar(&dst, "d", "../data/animes.json", "Destination file")
 
 	flag.Parse()
 
-	if toJSON {
+	if ConverttoJSON {
 		toMd = false
 	}
 
-	if toMd {
+	if !toMd {
 		// md -> json
 		if filepath.Ext(src) != ".md" {
 			fmt.Printf("Please specify a md file as a src file")
@@ -227,7 +247,7 @@ func main() {
 		}
 
 		fmt.Println("Converting to JSON...")
-		if err := marshal(filepath.Clean(src), filepath.Clean(dst)); err != nil {
+		if err := convertToJSON(filepath.Clean(src), filepath.Clean(dst)); err != nil {
 			log.Fatal(err)
 		}
 	} else {
@@ -241,7 +261,7 @@ func main() {
 		}
 
 		fmt.Println("Converting to MD..")
-		if err := unMarshal(filepath.Clean(src), filepath.Clean(dst)); err != nil {
+		if err := convertToMd(filepath.Clean(src), filepath.Clean(dst)); err != nil {
 			log.Fatal(err)
 		}
 	}
