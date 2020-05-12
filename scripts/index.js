@@ -23,37 +23,33 @@ async function render() {
 }
 
 function createAnimeHistoryTable(animesJson) {
-    let html = "<table>";
-    const yearsDes = Object.keys(animesJson).reverse();
-    for (const year of yearsDes) {
-        const animesYear = animesJson[year]
-        const coursDes = Object.keys(animesYear.cours).reverse();
-        for (const cour of coursDes) {
-            html += `<th>${year}.${cour}</th>`
-            for (const anime of animesYear.cours[cour].animes) {
+    let tableHTML = "<table>";
+    for (const animesYear of Object.values(animesJson).reverse()) {
+        for (const animesCour of Object.values(animesYear.cours).reverse()) {
+            tableHTML += `<th>${animesYear.year}.${animesCour.cour}</th>`
+            for (const anime of animesCour.animes) {
                 if (anime.watchedToLast) {
-                    html += "<tr><td>";
+                    tableHTML += "<tr><td>";
                 } else {
-                    html += '<tr id ="notWatchedAll"><td>';
+                    tableHTML += '<tr id ="notWatchedAll"><td>';
                 }
-                html += `${anime.title}</td></tr>`;
+                tableHTML += `${anime.title}</td></tr>`;
             }
         }
     }
-    html += "</table>"
-    return html;
+    tableHTML += "</table>"
+    return tableHTML;
 }
 
 function drawAnimeHistory(animesJson) {
     const sumByCourArray = [];
     const sumByCourWatchedAllArray = [];
     const courName = [];
-    for (const year of Object.keys(animesJson)) {
-        const animesYear = animesJson[year]
-        for (const cour of Object.keys(animesYear.cours)) {
-            sumByCourArray.push(animesYear.cours[cour].num);
-            sumByCourWatchedAllArray.push(animesYear.cours[cour].numWatchedToLast);
-            courName.push(`${year}.${cour}`);
+    for (const animesYear of Object.values(animesJson)) {
+        for (const animesCour of Object.values(animesYear.cours)) {
+            sumByCourArray.push(animesCour.num);
+            sumByCourWatchedAllArray.push(animesCour.numWatchedToLast);
+            courName.push(`${animesYear.year}.${animesCour.cour}`);
         }
     }
 
@@ -100,14 +96,12 @@ function drawHitRate(animesJson) {
     const hitRate = [];
     const sumByYearArray = [];
     const sumByYearWatchedAllArray = [];
-    const yearName = [];
-    for (const year of Object.keys(animesJson)) {
-        const animesYear = animesJson[year]
+    for (const animesYear of Object.values(animesJson)) {
         hitRate.push(animesYear.numWatchedToLast / animesYear.num * 100);
         sumByYearArray.push(animesYear.num);
         sumByYearWatchedAllArray.push(animesYear.numWatchedToLast);
-        yearName.push(year);
     }
+    const yearName = Object.keys(animesJson);
 
     // グラフオプションを指定
     Highcharts.chart('hitrate', {
