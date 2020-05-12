@@ -6,8 +6,8 @@ async function render() {
     // assume animes is sorted in descending order
     const tableHTML = createAnimeHistoryTable(animes.years);
     const hitrateAll = (animes.numWatchedToLast / animes.num * 100).toFixed(1);
-    document.getElementById("reportHitrate").innerHTML = 
-    `全期間完走率: ${animes.numWatchedToLast}/${animes.num} = ${hitrateAll}%`
+    document.getElementById("reportHitrate").innerHTML =
+        `全期間完走率: ${animes.numWatchedToLast}/${animes.num} = ${hitrateAll}%`
     document.getElementById("reportTable").innerHTML = tableHTML
 
     Highcharts.setOptions({
@@ -77,27 +77,27 @@ function drawAnimeHistory(animesJson) {
             { name: "視聴", data: sumByCourArray, id: 'watched' },
             { name: "完走", data: sumByCourWatchedAllArray, id: 'watchedToLast' },
             {
-                name: "視聴(移動平均)", linkedTo: 'watched', type: 'sma', 
+                name: "視聴(移動平均)", linkedTo: 'watched', type: 'sma',
                 params: {
                     period: 4
-                }, 
+                },
                 marker: {
                     enabled: false
-                }, 
-                tooltip: { 
-                    valueDecimals: 2 
+                },
+                tooltip: {
+                    valueDecimals: 2
                 }
             },
             {
-                name: "完走(移動平均)", linkedTo: 'watchedToLast', type: 'sma', 
+                name: "完走(移動平均)", linkedTo: 'watchedToLast', type: 'sma',
                 params: {
                     period: 4
-                }, 
+                },
                 marker: {
                     enabled: false
-                }, 
-                tooltip: { 
-                    valueDecimals: 2 
+                },
+                tooltip: {
+                    valueDecimals: 2
                 }
             }]
     });
@@ -142,12 +142,12 @@ function drawHitRate(animesJson) {
         series: [
             { name: "視聴", data: sumByYearArray },
             { name: "完走", data: sumByYearWatchedAllArray },
-            { 
-                name: "完走率", data: hitRate, yAxis: 1, 
-                tooltip: { 
-                    valueSuffix: ' %', 
-                    valueDecimals: 1 
-                } 
+            {
+                name: "完走率", data: hitRate, yAxis: 1,
+                tooltip: {
+                    valueSuffix: ' %',
+                    valueDecimals: 1
+                }
             }
         ]
     });
