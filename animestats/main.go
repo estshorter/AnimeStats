@@ -225,15 +225,15 @@ func sortCoursDec(m map[int]animeCour) []int {
 func main() {
 	var ConverttoJSON, toMd bool
 	var src, dst string
-	flag.BoolVar(&ConverttoJSON, "json", false, "Convert to json from md")
-	flag.BoolVar(&toMd, "md", true, "Convert to md from json")
+	flag.BoolVar(&ConverttoJSON, "json", true, "Convert to json from md")
+	flag.BoolVar(&toMd, "md", false, "Convert to md from json")
 	flag.StringVar(&src, "s", "../data/AnimeHistory.md", "Src file")
 	flag.StringVar(&dst, "d", "../data/animes.json", "Destination file")
 
 	flag.Parse()
 
-	if ConverttoJSON {
-		toMd = false
+	if toMd {
+		ConverttoJSON = false
 	}
 
 	if !toMd {
