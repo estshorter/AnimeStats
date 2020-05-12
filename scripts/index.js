@@ -24,13 +24,11 @@ async function render() {
 
 function createAnimeHistoryTable(animesJson) {
     let html = "<table>";
-    const years = Object.keys(animesJson);
-    years.reverse()
-    for (const year of years) {
+    const yearsDes = Object.keys(animesJson).reverse();
+    for (const year of yearsDes) {
         const animesYear = animesJson[year]
-        const cours = Object.keys(animesYear.cours);
-        cours.reverse()
-        for (const cour of cours) {
+        const coursDes = Object.keys(animesYear.cours).reverse();
+        for (const cour of coursDes) {
             let showYearCour = true
             for (const anime of animesYear.cours[cour].animes) {
                 if (showYearCour) {
