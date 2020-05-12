@@ -29,12 +29,8 @@ function createAnimeHistoryTable(animesJson) {
         const animesYear = animesJson[year]
         const coursDes = Object.keys(animesYear.cours).reverse();
         for (const cour of coursDes) {
-            let showYearCour = true
+            html += `<th>${year}.${cour}</th>`
             for (const anime of animesYear.cours[cour].animes) {
-                if (showYearCour) {
-                    html += `<th>${anime.year}.${anime.cour}</th>`
-                    showYearCour = false
-                }
                 if (anime.watchedToLast) {
                     html += "<tr><td>";
                 } else {
