@@ -8,12 +8,12 @@
                             "title": "宇宙をかける少女",
                             "year": 2009,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         }
                     ],
                     "cour": 1,
                     "num": 1,
-                    "numWatchedToLast": 1
+                    "numCompleted": 1
                 },
                 "2": {
                     "animes": [
@@ -21,24 +21,24 @@
                             "title": "けいおん",
                             "year": 2009,
                             "cour": 2,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "宇宙をかける少女",
                             "year": 2009,
                             "cour": 2,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "アスラクライン",
                             "year": 2009,
                             "cour": 2,
-                            "watchedToLast": false
+                            "completed": false
                         }
                     ],
                     "cour": 2,
                     "num": 3,
-                    "numWatchedToLast": 2
+                    "numCompleted": 2
                 },
                 "3": {
                     "animes": [
@@ -46,36 +46,36 @@
                             "title": "うみねこのなく頃に",
                             "year": 2009,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "CANAAN",
                             "year": 2009,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "懺・さよなら絶望先生",
                             "year": 2009,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "化物語",
                             "year": 2009,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "涼宮ハルヒの憂鬱",
                             "year": 2009,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         }
                     ],
                     "cour": 3,
                     "num": 5,
-                    "numWatchedToLast": 5
+                    "numCompleted": 5
                 },
                 "4": {
                     "animes": [
@@ -83,23 +83,23 @@
                             "title": "うみねこのなく頃に",
                             "year": 2009,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "そらのおとしもの",
                             "year": 2009,
                             "cour": 4,
-                            "watchedToLast": false
+                            "completed": false
                         }
                     ],
                     "cour": 4,
                     "num": 2,
-                    "numWatchedToLast": 1
+                    "numCompleted": 1
                 }
             },
             "year": 2009,
             "num": 11,
-            "numWatchedToLast": 9
+            "numCompleted": 9
         },
         "2010": {
             "cours": {
@@ -109,30 +109,30 @@
                             "title": "COBRA THE ANIMATION",
                             "year": 2010,
                             "cour": 1,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "ソ・ラ・ノ・ヲ・ト",
                             "year": 2010,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "刀語",
                             "year": 2010,
                             "cour": 1,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "聖痕のクェイサー",
                             "year": 2010,
                             "cour": 1,
-                            "watchedToLast": false
+                            "completed": false
                         }
                     ],
                     "cour": 1,
                     "num": 4,
-                    "numWatchedToLast": 1
+                    "numCompleted": 1
                 },
                 "2": {
                     "animes": [
@@ -140,60 +140,60 @@
                             "title": "WORKING!!",
                             "year": 2010,
                             "cour": 2,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "荒川アンダー ザ ブリッジ",
                             "year": 2010,
                             "cour": 2,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "閃光のナイトレイド",
                             "year": 2010,
                             "cour": 2,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "迷い猫オーバーラン！",
                             "year": 2010,
                             "cour": 2,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "四畳半神話大系",
                             "year": 2010,
                             "cour": 2,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "B型H系",
                             "year": 2010,
                             "cour": 2,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "けいおん!!",
                             "year": 2010,
                             "cour": 2,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "Angel Beats!",
                             "year": 2010,
                             "cour": 2,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "いちばんうしろの大魔王",
                             "year": 2010,
                             "cour": 2,
-                            "watchedToLast": false
+                            "completed": false
                         }
                     ],
                     "cour": 2,
                     "num": 9,
-                    "numWatchedToLast": 5
+                    "numCompleted": 5
                 },
                 "3": {
                     "animes": [
@@ -201,60 +201,60 @@
                             "title": "あそびにいくヨ！",
                             "year": 2010,
                             "cour": 3,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "けいおん!!",
                             "year": 2010,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "生徒会役員共",
                             "year": 2010,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "世紀末オカルト学院",
                             "year": 2010,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "ストライクウィッチーズ2",
                             "year": 2010,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "祝福のカンパネラ",
                             "year": 2010,
                             "cour": 3,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "屍鬼",
                             "year": 2010,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "学園黙示録 HIGHSCHOOL OF THE DEAD",
                             "year": 2010,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "アマガミSS",
                             "year": 2010,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         }
                     ],
                     "cour": 3,
                     "num": 9,
-                    "numWatchedToLast": 7
+                    "numCompleted": 7
                 },
                 "4": {
                     "animes": [
@@ -262,95 +262,95 @@
                             "title": "FORTUNE ARTERIAL 赤い約束",
                             "year": 2010,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "百花繚乱 サムライガールズ",
                             "year": 2010,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "パンティ＆ストッキングwithガーターベルト",
                             "year": 2010,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "ヨスガノソラ",
                             "year": 2010,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "それでも町は廻っている",
                             "year": 2010,
                             "cour": 4,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "俺の妹がこんなに可愛いわけがない",
                             "year": 2010,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "神のみぞ知るセカイ",
                             "year": 2010,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "探偵オペラ ミルキィホームズ",
                             "year": 2010,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "侵略！イカ娘",
                             "year": 2010,
                             "cour": 4,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "アイアンマン",
                             "year": 2010,
                             "cour": 4,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "おとめ妖怪 ざくろ",
                             "year": 2010,
                             "cour": 4,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "えむえむっ！",
                             "year": 2010,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "屍鬼",
                             "year": 2010,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "アマガミSS",
                             "year": 2010,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         }
                     ],
                     "cour": 4,
                     "num": 14,
-                    "numWatchedToLast": 10
+                    "numCompleted": 10
                 }
             },
             "year": 2010,
             "num": 36,
-            "numWatchedToLast": 23
+            "numCompleted": 23
         },
         "2011": {
             "cours": {
@@ -360,60 +360,60 @@
                             "title": "フラクタル",
                             "year": 2011,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "お兄ちゃんのことなんかぜんぜん好きじゃないんだからねっ!!",
                             "year": 2011,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "GOSICK -ゴシック-",
                             "year": 2011,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "ドラゴンクライシス！",
                             "year": 2011,
                             "cour": 1,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "これはゾンビですか？",
                             "year": 2011,
                             "cour": 1,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "レベルE",
                             "year": 2011,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "魔法少女まどか☆マギカ",
                             "year": 2011,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "ジュエルペット てぃんくる☆",
                             "year": 2011,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "IS〈インフィニット・ストラトス〉",
                             "year": 2011,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         }
                     ],
                     "cour": 1,
                     "num": 9,
-                    "numWatchedToLast": 7
+                    "numCompleted": 7
                 },
                 "2": {
                     "animes": [
@@ -421,96 +421,96 @@
                             "title": "星空へ架かる橋",
                             "year": 2011,
                             "cour": 2,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "神のみぞ知るセカイ",
                             "year": 2011,
                             "cour": 2,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "俺たちに翼はない",
                             "year": 2011,
                             "cour": 2,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "デッドマン・ワンダーランド",
                             "year": 2011,
                             "cour": 2,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "花咲くいろは",
                             "year": 2011,
                             "cour": 2,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "30歳の保健体育",
                             "year": 2011,
                             "cour": 2,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "まりあ†ほりっく あらいぶ",
                             "year": 2011,
                             "cour": 2,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "あの日見た花の名前を僕達はまだ知らない。",
                             "year": 2011,
                             "cour": 2,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "電波女と青春男",
                             "year": 2011,
                             "cour": 2,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "そふてにっ",
                             "year": 2011,
                             "cour": 2,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "Steins;Gate",
                             "year": 2011,
                             "cour": 2,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "GOSICK",
                             "year": 2011,
                             "cour": 2,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "DOG DAYS",
                             "year": 2011,
                             "cour": 2,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "TIGER \u0026 BUNNY",
                             "year": 2011,
                             "cour": 2,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "C",
                             "year": 2011,
                             "cour": 2,
-                            "watchedToLast": true
+                            "completed": true
                         }
                     ],
                     "cour": 2,
                     "num": 15,
-                    "numWatchedToLast": 10
+                    "numCompleted": 10
                 },
                 "3": {
                     "animes": [
@@ -518,90 +518,90 @@
                             "title": "ダンタリアンの書架",
                             "year": 2011,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "セイクリッドセブン",
                             "year": 2011,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "ロウきゅーぶ！",
                             "year": 2011,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "輪るピングドラム",
                             "year": 2011,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "TIGER \u0026 BUNNY",
                             "year": 2011,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "花咲くいろは",
                             "year": 2011,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "R-15",
                             "year": 2011,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "異国迷路のクロワーゼ",
                             "year": 2011,
                             "cour": 3,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "BLOOD-C",
                             "year": 2011,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "THE IDOLM@STER",
                             "year": 2011,
                             "cour": 3,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "Steins;Gate",
                             "year": 2011,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "神様ドォルズ",
                             "year": 2011,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "快盗天使ツインエンジェル",
                             "year": 2011,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "ゆるゆり",
                             "year": 2011,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         }
                     ],
                     "cour": 3,
                     "num": 14,
-                    "numWatchedToLast": 12
+                    "numCompleted": 12
                 },
                 "4": {
                     "animes": [
@@ -609,65 +609,65 @@
                             "title": "ましろ色シンフォニー",
                             "year": 2011,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "輪るピングドラム",
                             "year": 2011,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "ペルソナ4",
                             "year": 2011,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "僕は友達が少ない",
                             "year": 2011,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "マケン姫っ！",
                             "year": 2011,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "境界線上のホライゾン",
                             "year": 2011,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "Fate/Zero",
                             "year": 2011,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "ギルティクラウン",
                             "year": 2011,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "ジュエルペット サンシャイン",
                             "year": 2011,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         }
                     ],
                     "cour": 4,
                     "num": 9,
-                    "numWatchedToLast": 9
+                    "numCompleted": 9
                 }
             },
             "year": 2011,
             "num": 47,
-            "numWatchedToLast": 38
+            "numCompleted": 38
         },
         "2012": {
             "cours": {
@@ -677,78 +677,78 @@
                             "title": "あの夏で待ってる",
                             "year": 2012,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "プリティーリズム・オーロラドリーム",
                             "year": 2012,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "ジュエルペット サンシャイン",
                             "year": 2012,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "戦姫絶唱シンフォギア",
                             "year": 2012,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "輪廻のラグランジェ",
                             "year": 2012,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "ギルティクラウン",
                             "year": 2012,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "ミルキィホームズ 第2幕",
                             "year": 2012,
                             "cour": 1,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "ペルソナ4",
                             "year": 2012,
                             "cour": 1,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "モーレツ宇宙海賊",
                             "year": 2012,
                             "cour": 1,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "アクエリオンEVOL",
                             "year": 2012,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "スマイルプリキュア！",
                             "year": 2012,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "Another",
                             "year": 2012,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         }
                     ],
                     "cour": 1,
                     "num": 12,
-                    "numWatchedToLast": 9
+                    "numCompleted": 9
                 },
                 "2": {
                     "animes": [
@@ -756,72 +756,72 @@
                             "title": "Fate/Zero",
                             "year": 2012,
                             "cour": 2,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "宇宙兄弟",
                             "year": 2012,
                             "cour": 2,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "黄昏乙女×アムネジア",
                             "year": 2012,
                             "cour": 2,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "LUPIN the Third -峰不二子という女-",
                             "year": 2012,
                             "cour": 2,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "ZETMAN",
                             "year": 2012,
                             "cour": 2,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "夏色キセキ",
                             "year": 2012,
                             "cour": 2,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "氷菓",
                             "year": 2012,
                             "cour": 2,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "エウレカセブンAO",
                             "year": 2012,
                             "cour": 2,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "プリティーリズム・ディアマイフューチャー",
                             "year": 2012,
                             "cour": 2,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "アクエリオンEVOL",
                             "year": 2012,
                             "cour": 2,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "スマイルプリキュア！",
                             "year": 2012,
                             "cour": 2,
-                            "watchedToLast": false
+                            "completed": false
                         }
                     ],
                     "cour": 2,
                     "num": 11,
-                    "numWatchedToLast": 7
+                    "numCompleted": 7
                 },
                 "3": {
                     "animes": [
@@ -829,54 +829,54 @@
                             "title": "輪廻のラグランジェ",
                             "year": 2012,
                             "cour": 3,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "プリティーリズム・ディアマイフューチャー",
                             "year": 2012,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "エウレカセブンAO",
                             "year": 2012,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "DOG DAYS'",
                             "year": 2012,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "氷菓",
                             "year": 2012,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "マブラヴ オルタネイティヴ トータル・イクリプス",
                             "year": 2012,
                             "cour": 3,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "TARI TARI",
                             "year": 2012,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "戦国コレクション",
                             "year": 2012,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         }
                     ],
                     "cour": 3,
                     "num": 8,
-                    "numWatchedToLast": 6
+                    "numCompleted": 6
                 },
                 "4": {
                     "animes": [
@@ -884,77 +884,77 @@
                             "title": "ガールズ\u0026パンツァー",
                             "year": 2012,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "新世界より",
                             "year": 2012,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "中二病でも恋がしたい！",
                             "year": 2012,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "PSYCHO-PASS",
                             "year": 2012,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "K",
                             "year": 2012,
                             "cour": 4,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "ジョジョの奇妙な冒険",
                             "year": 2012,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "アイカツ！",
                             "year": 2012,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "プリティーリズム・ディアマイフューチャー",
                             "year": 2012,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "リトルバスターズ！",
                             "year": 2012,
                             "cour": 4,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "ROBOTICS;NOTES",
                             "year": 2012,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "超速変形ジャイロゼッター",
                             "year": 2012,
                             "cour": 4,
-                            "watchedToLast": false
+                            "completed": false
                         }
                     ],
                     "cour": 4,
                     "num": 11,
-                    "numWatchedToLast": 8
+                    "numCompleted": 8
                 }
             },
             "year": 2012,
             "num": 42,
-            "numWatchedToLast": 30
+            "numCompleted": 30
         },
         "2013": {
             "cours": {
@@ -964,78 +964,78 @@
                             "title": "超速変形ジャイロゼッター",
                             "year": 2013,
                             "cour": 1,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "ラブライブ！",
                             "year": 2013,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "閃乱カグラ",
                             "year": 2013,
                             "cour": 1,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "アイカツ！",
                             "year": 2013,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "新世界より",
                             "year": 2013,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "たまこまーけっと",
                             "year": 2013,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "PSYCHO-PASS",
                             "year": 2013,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "ROBOTICS;NOTES",
                             "year": 2013,
                             "cour": 1,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "ジョジョの奇妙な冒険",
                             "year": 2013,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "ビビッドレッド・オペレーション",
                             "year": 2013,
                             "cour": 1,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "AKB0048",
                             "year": 2013,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "プリティーリズム・ディアマイフューチャー",
                             "year": 2013,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         }
                     ],
                     "cour": 1,
                     "num": 12,
-                    "numWatchedToLast": 8
+                    "numCompleted": 8
                 },
                 "2": {
                     "animes": [
@@ -1043,42 +1043,42 @@
                             "title": "アイカツ！",
                             "year": 2013,
                             "cour": 2,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "銀河機攻隊 マジェスティックプリンス",
                             "year": 2013,
                             "cour": 2,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "革命機ヴァルヴレイヴ",
                             "year": 2013,
                             "cour": 2,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "宇宙戦艦ヤマト2199",
                             "year": 2013,
                             "cour": 2,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "翠星のガルガンティア",
                             "year": 2013,
                             "cour": 2,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "百花繚乱 サムライガールズ",
                             "year": 2013,
                             "cour": 2,
-                            "watchedToLast": false
+                            "completed": false
                         }
                     ],
                     "cour": 2,
                     "num": 6,
-                    "numWatchedToLast": 5
+                    "numCompleted": 5
                 },
                 "3": {
                     "animes": [
@@ -1086,60 +1086,60 @@
                             "title": "超次元ゲイム ネプテューヌ",
                             "year": 2013,
                             "cour": 3,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "ファンタジスタドール",
                             "year": 2013,
                             "cour": 3,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "宇宙戦艦ヤマト2199",
                             "year": 2013,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "銀河機攻隊 マジェスティックプリンス",
                             "year": 2013,
                             "cour": 3,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "戦姫絶唱シンフォギアG",
                             "year": 2013,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "ガッチャマン クラウズ",
                             "year": 2013,
                             "cour": 3,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "Fate kaleid liner プリズマ☆イリヤ",
                             "year": 2013,
                             "cour": 3,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "幻影ヲ駆ケル太陽",
                             "year": 2013,
                             "cour": 3,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "アイカツ！",
                             "year": 2013,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         }
                     ],
                     "cour": 3,
                     "num": 9,
-                    "numWatchedToLast": 3
+                    "numCompleted": 3
                 },
                 "4": {
                     "animes": [
@@ -1147,47 +1147,47 @@
                             "title": "ガリレイドンナ",
                             "year": 2013,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "革命機ヴァルヴレイヴ",
                             "year": 2013,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "キルラキル",
                             "year": 2013,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "アイカツ！",
                             "year": 2013,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "勇者になれなかった俺はしぶしぶ就職を決意しました。",
                             "year": 2013,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "蒼き鋼のアルペジオ",
                             "year": 2013,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         }
                     ],
                     "cour": 4,
                     "num": 6,
-                    "numWatchedToLast": 6
+                    "numCompleted": 6
                 }
             },
             "year": 2013,
             "num": 33,
-            "numWatchedToLast": 22
+            "numCompleted": 22
         },
         "2014": {
             "cours": {
@@ -1197,42 +1197,42 @@
                             "title": "世界征服〜謀略のズヴィズダー〜",
                             "year": 2014,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "のうりん",
                             "year": 2014,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "キルラキル",
                             "year": 2014,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "アイカツ！",
                             "year": 2014,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "中二病でも恋がしたい！戀",
                             "year": 2014,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "ハピネスチャージプリキュア！",
                             "year": 2014,
                             "cour": 1,
-                            "watchedToLast": false
+                            "completed": false
                         }
                     ],
                     "cour": 1,
                     "num": 6,
-                    "numWatchedToLast": 5
+                    "numCompleted": 5
                 },
                 "2": {
                     "animes": [
@@ -1240,42 +1240,42 @@
                             "title": "ラブライブ！",
                             "year": 2014,
                             "cour": 2,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "アイカツ！",
                             "year": 2014,
                             "cour": 2,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "ジョジョの奇妙な冒険 スターダストクルセイダーズ",
                             "year": 2014,
                             "cour": 2,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "魔法科高校の劣等生",
                             "year": 2014,
                             "cour": 2,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "キャプテン・アース",
                             "year": 2014,
                             "cour": 2,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "極黒のブリュンヒルデ",
                             "year": 2014,
                             "cour": 2,
-                            "watchedToLast": false
+                            "completed": false
                         }
                     ],
                     "cour": 2,
                     "num": 6,
-                    "numWatchedToLast": 3
+                    "numCompleted": 3
                 },
                 "3": {
                     "animes": [
@@ -1283,42 +1283,42 @@
                             "title": "ハナヤマタ",
                             "year": 2014,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "キャプテン・アース",
                             "year": 2014,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "アルドノア・ゼロ",
                             "year": 2014,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "普通の女子校生が【ろこどる】やってみた。",
                             "year": 2014,
                             "cour": 3,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "アイカツ！",
                             "year": 2014,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "プリパラ",
                             "year": 2014,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         }
                     ],
                     "cour": 3,
                     "num": 6,
-                    "numWatchedToLast": 5
+                    "numCompleted": 5
                 },
                 "4": {
                     "animes": [
@@ -1326,83 +1326,83 @@
                             "title": "SHIROBAKO",
                             "year": 2014,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "アイカツ！",
                             "year": 2014,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "デンキ街の本屋さん",
                             "year": 2014,
                             "cour": 4,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "ガールフレンド（仮）",
                             "year": 2014,
                             "cour": 4,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "天体のメソッド",
                             "year": 2014,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "クロスアンジュ 天使と竜の輪舞",
                             "year": 2014,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "失われた未来を求めて",
                             "year": 2014,
                             "cour": 4,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "Fate/stay night",
                             "year": 2014,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "プリパラ",
                             "year": 2014,
                             "cour": 4,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "ガンダム Gのレコンキスタ",
                             "year": 2014,
                             "cour": 4,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "PSYCHO-PASS サイコパス 2",
                             "year": 2014,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "グリザイアの果実",
                             "year": 2014,
                             "cour": 4,
-                            "watchedToLast": false
+                            "completed": false
                         }
                     ],
                     "cour": 4,
                     "num": 12,
-                    "numWatchedToLast": 6
+                    "numCompleted": 6
                 }
             },
             "year": 2014,
             "num": 30,
-            "numWatchedToLast": 19
+            "numCompleted": 19
         },
         "2015": {
             "cours": {
@@ -1412,48 +1412,48 @@
                             "title": "ユリ熊嵐",
                             "year": 2015,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "アイカツ！",
                             "year": 2015,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "SHIROBAKO",
                             "year": 2015,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "蒼穹のファフナー EXODUS",
                             "year": 2015,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "アルドノア・ゼロ",
                             "year": 2015,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "クロスアンジュ 天使と竜の輪舞",
                             "year": 2015,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "夜ノヤッターマン",
                             "year": 2015,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         }
                     ],
                     "cour": 1,
                     "num": 7,
-                    "numWatchedToLast": 7
+                    "numCompleted": 7
                 },
                 "2": {
                     "animes": [
@@ -1461,42 +1461,42 @@
                             "title": "アイカツ！",
                             "year": 2015,
                             "cour": 2,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "放課後のプレアデス",
                             "year": 2015,
                             "cour": 2,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "パンチライン",
                             "year": 2015,
                             "cour": 2,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "SHOW BY ROCK！！",
                             "year": 2015,
                             "cour": 2,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "Fate/stay night",
                             "year": 2015,
                             "cour": 2,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "プラスティック・メモリーズ",
                             "year": 2015,
                             "cour": 2,
-                            "watchedToLast": false
+                            "completed": false
                         }
                     ],
                     "cour": 2,
                     "num": 6,
-                    "numWatchedToLast": 3
+                    "numCompleted": 3
                 },
                 "3": {
                     "animes": [
@@ -1504,54 +1504,54 @@
                             "title": "空戦魔導士候補生の教官",
                             "year": 2015,
                             "cour": 3,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "Classroom☆Crisis",
                             "year": 2015,
                             "cour": 3,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "乱歩奇譚 Game of Laplace",
                             "year": 2015,
                             "cour": 3,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "がっこうぐらし",
                             "year": 2015,
                             "cour": 3,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "アクエリオンロゴス",
                             "year": 2015,
                             "cour": 3,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "アイカツ",
                             "year": 2015,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "戦姫絶唱シンフォギアGX",
                             "year": 2015,
                             "cour": 3,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "Charlotte",
                             "year": 2015,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         }
                     ],
                     "cour": 3,
                     "num": 8,
-                    "numWatchedToLast": 2
+                    "numCompleted": 2
                 },
                 "4": {
                     "animes": [
@@ -1559,65 +1559,65 @@
                             "title": "ヤング ブラック・ジャック",
                             "year": 2015,
                             "cour": 4,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "サンダーバード ARE GO",
                             "year": 2015,
                             "cour": 4,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "アイカツ！",
                             "year": 2015,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "コンクリート・レボルティオ",
                             "year": 2015,
                             "cour": 4,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "コメット・ルシファー",
                             "year": 2015,
                             "cour": 4,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "ルパン三世",
                             "year": 2015,
                             "cour": 4,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "うたわれるもの 偽りの仮面",
                             "year": 2015,
                             "cour": 4,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "蒼穹のファフナー EXODUS",
                             "year": 2015,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "機動戦士ガンダム 鉄血のオルフェンズ",
                             "year": 2015,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         }
                     ],
                     "cour": 4,
                     "num": 9,
-                    "numWatchedToLast": 3
+                    "numCompleted": 3
                 }
             },
             "year": 2015,
             "num": 30,
-            "numWatchedToLast": 15
+            "numCompleted": 15
         },
         "2016": {
             "cours": {
@@ -1627,30 +1627,30 @@
                             "title": "機動戦士ガンダム 鉄血のオルフェンズ",
                             "year": 2016,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "ナースウイッチ小麦ちゃんR",
                             "year": 2016,
                             "cour": 1,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "アイカツ！",
                             "year": 2016,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "魔法つかいプリキュア！",
                             "year": 2016,
                             "cour": 1,
-                            "watchedToLast": false
+                            "completed": false
                         }
                     ],
                     "cour": 1,
                     "num": 4,
-                    "numWatchedToLast": 2
+                    "numCompleted": 2
                 },
                 "2": {
                     "animes": [
@@ -1658,24 +1658,24 @@
                             "title": "アイカツスターズ！",
                             "year": 2016,
                             "cour": 2,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "迷家‐マヨイガ‐",
                             "year": 2016,
                             "cour": 2,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "はいふり",
                             "year": 2016,
                             "cour": 2,
-                            "watchedToLast": false
+                            "completed": false
                         }
                     ],
                     "cour": 2,
                     "num": 3,
-                    "numWatchedToLast": 2
+                    "numCompleted": 2
                 },
                 "3": {
                     "animes": [
@@ -1683,30 +1683,30 @@
                             "title": "91Days",
                             "year": 2016,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "NEW GAME!",
                             "year": 2016,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "アイカツスターズ！",
                             "year": 2016,
                             "cour": 3,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "ラブライブ！サンシャイン!!",
                             "year": 2016,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         }
                     ],
                     "cour": 3,
                     "num": 4,
-                    "numWatchedToLast": 3
+                    "numCompleted": 3
                 },
                 "4": {
                     "animes": [
@@ -1714,29 +1714,29 @@
                             "title": "機動戦士ガンダム 鉄血のオルフェンズ",
                             "year": 2016,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "終末のイゼッタ",
                             "year": 2016,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "DRIFTERS",
                             "year": 2016,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         }
                     ],
                     "cour": 4,
                     "num": 3,
-                    "numWatchedToLast": 3
+                    "numCompleted": 3
                 }
             },
             "year": 2016,
             "num": 14,
-            "numWatchedToLast": 10
+            "numCompleted": 10
         },
         "2017": {
             "cours": {
@@ -1746,42 +1746,42 @@
                             "title": "けものフレンズ",
                             "year": 2017,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "OneRoom",
                             "year": 2017,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "機動戦士ガンダム 鉄血のオルフェンズ",
                             "year": 2017,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "BanG Dream!",
                             "year": 2017,
                             "cour": 1,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "小林さんちのメイドラゴン",
                             "year": 2017,
                             "cour": 1,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "この素晴らしい世界に祝福を！2",
                             "year": 2017,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         }
                     ],
                     "cour": 1,
                     "num": 6,
-                    "numWatchedToLast": 4
+                    "numCompleted": 4
                 },
                 "2": {
                     "animes": [
@@ -1789,42 +1789,42 @@
                             "title": "終末なにしてますか？ 忙しいですか？ 救ってもらっていいですか？",
                             "year": 2017,
                             "cour": 2,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "グランブルーファンタジー",
                             "year": 2017,
                             "cour": 2,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "正解するカド",
                             "year": 2017,
                             "cour": 2,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "ツインエンジェルBREAK",
                             "year": 2017,
                             "cour": 2,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "サクラクエスト",
                             "year": 2017,
                             "cour": 2,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "サクラダリセット",
                             "year": 2017,
                             "cour": 2,
-                            "watchedToLast": false
+                            "completed": false
                         }
                     ],
                     "cour": 2,
                     "num": 6,
-                    "numWatchedToLast": 4
+                    "numCompleted": 4
                 },
                 "3": {
                     "animes": [
@@ -1832,30 +1832,30 @@
                             "title": "プリンセス・プリンシパル",
                             "year": 2017,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "地獄少女 宵伽",
                             "year": 2017,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "サクラクエスト",
                             "year": 2017,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "NEW GAME!!",
                             "year": 2017,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         }
                     ],
                     "cour": 3,
                     "num": 4,
-                    "numWatchedToLast": 4
+                    "numCompleted": 4
                 },
                 "4": {
                     "animes": [
@@ -1863,17 +1863,17 @@
                             "title": "結城友奈は勇者である -鷲尾須美の章-/-勇者の章-",
                             "year": 2017,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         }
                     ],
                     "cour": 4,
                     "num": 1,
-                    "numWatchedToLast": 1
+                    "numCompleted": 1
                 }
             },
             "year": 2017,
             "num": 17,
-            "numWatchedToLast": 13
+            "numCompleted": 13
         },
         "2018": {
             "cours": {
@@ -1883,42 +1883,42 @@
                             "title": "宇宙よりも遠い場所",
                             "year": 2018,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "ゆるキャン△",
                             "year": 2018,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "Fate/EXTRA Last Encore",
                             "year": 2018,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "ゲゲゲの鬼太郎",
                             "year": 2018,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "BEATLESS",
                             "year": 2018,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "ヴァイオレット・エヴァーガーデン",
                             "year": 2018,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         }
                     ],
                     "cour": 1,
                     "num": 6,
-                    "numWatchedToLast": 6
+                    "numCompleted": 6
                 },
                 "2": {
                     "animes": [
@@ -1926,36 +1926,36 @@
                             "title": "ゲゲゲの鬼太郎",
                             "year": 2018,
                             "cour": 2,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "ウマ娘 プリティーダービー",
                             "year": 2018,
                             "cour": 2,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "踏切時間",
                             "year": 2018,
                             "cour": 2,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "フルメタルパニック Invisible Victory",
                             "year": 2018,
                             "cour": 2,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "シュタインズ・ゲート ゼロ",
                             "year": 2018,
                             "cour": 2,
-                            "watchedToLast": true
+                            "completed": true
                         }
                     ],
                     "cour": 2,
                     "num": 5,
-                    "numWatchedToLast": 4
+                    "numCompleted": 4
                 },
                 "3": {
                     "animes": [
@@ -1963,48 +1963,48 @@
                             "title": "アイカツフレンズ！",
                             "year": 2018,
                             "cour": 3,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "すのはら荘の管理人さん",
                             "year": 2018,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "One Room セカンドシーズン",
                             "year": 2018,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "シュタインズ・ゲート ゼロ",
                             "year": 2018,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "ゲゲゲの鬼太郎",
                             "year": 2018,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "音楽少女",
                             "year": 2018,
                             "cour": 3,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "少女 歌劇 レヴュースタァライト",
                             "year": 2018,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         }
                     ],
                     "cour": 3,
                     "num": 7,
-                    "numWatchedToLast": 5
+                    "numCompleted": 5
                 },
                 "4": {
                     "animes": [
@@ -2012,41 +2012,41 @@
                             "title": "閃乱カグラ SHINOVI MASTER -東京妖魔篇-",
                             "year": 2018,
                             "cour": 4,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "ゴブリンスレイヤー",
                             "year": 2018,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "ゾンビランドサガ",
                             "year": 2018,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "あかねさす少女",
                             "year": 2018,
                             "cour": 4,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "ゲゲゲの鬼太郎",
                             "year": 2018,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         }
                     ],
                     "cour": 4,
                     "num": 5,
-                    "numWatchedToLast": 3
+                    "numCompleted": 3
                 }
             },
             "year": 2018,
             "num": 23,
-            "numWatchedToLast": 18
+            "numCompleted": 18
         },
         "2019": {
             "cours": {
@@ -2056,12 +2056,12 @@
                             "title": "ゲゲゲの鬼太郎",
                             "year": 2019,
                             "cour": 1,
-                            "watchedToLast": true
+                            "completed": true
                         }
                     ],
                     "cour": 1,
                     "num": 1,
-                    "numWatchedToLast": 1
+                    "numCompleted": 1
                 },
                 "2": {
                     "animes": [
@@ -2069,18 +2069,18 @@
                             "title": "ゲゲゲの鬼太郎",
                             "year": 2019,
                             "cour": 2,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "世話やきキツネの仙狐さん",
                             "year": 2019,
                             "cour": 2,
-                            "watchedToLast": true
+                            "completed": true
                         }
                     ],
                     "cour": 2,
                     "num": 2,
-                    "numWatchedToLast": 1
+                    "numCompleted": 1
                 },
                 "3": {
                     "animes": [
@@ -2088,24 +2088,24 @@
                             "title": "ロード・エルメロイⅡ世の事件簿 -魔眼蒐集列車 Grace note-",
                             "year": 2019,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "通常攻撃が全体攻撃で二回攻撃のお母さんは好きですか?",
                             "year": 2019,
                             "cour": 3,
-                            "watchedToLast": false
+                            "completed": false
                         },
                         {
                             "title": "まちカドまぞく",
                             "year": 2019,
                             "cour": 3,
-                            "watchedToLast": true
+                            "completed": true
                         }
                     ],
                     "cour": 3,
                     "num": 3,
-                    "numWatchedToLast": 2
+                    "numCompleted": 2
                 },
                 "4": {
                     "animes": [
@@ -2113,47 +2113,47 @@
                             "title": "Fate/Grand Order -絶対魔獣戦線バビロニア-",
                             "year": 2019,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "アイカツオンパレード！",
                             "year": 2019,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "マギアレコード",
                             "year": 2019,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "ID: INVADED",
                             "year": 2019,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "バビロン",
                             "year": 2019,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         },
                         {
                             "title": "へやキャン△",
                             "year": 2019,
                             "cour": 4,
-                            "watchedToLast": true
+                            "completed": true
                         }
                     ],
                     "cour": 4,
                     "num": 6,
-                    "numWatchedToLast": 6
+                    "numCompleted": 6
                 }
             },
             "year": 2019,
             "num": 12,
-            "numWatchedToLast": 10
+            "numCompleted": 10
         },
         "2020": {
             "cours": {
@@ -2163,19 +2163,19 @@
                             "title": "新サクラ大戦 the Animation",
                             "year": 2020,
                             "cour": 1,
-                            "watchedToLast": false
+                            "completed": false
                         }
                     ],
                     "cour": 1,
                     "num": 1,
-                    "numWatchedToLast": 0
+                    "numCompleted": 0
                 }
             },
             "year": 2020,
             "num": 1,
-            "numWatchedToLast": 0
+            "numCompleted": 0
         }
     },
     "num": 296,
-    "numWatchedToLast": 207
+    "numCompleted": 207
 }

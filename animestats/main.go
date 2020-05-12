@@ -17,28 +17,28 @@ import (
 )
 
 type animeAll struct {
-	Years            map[int]animeYear `json:"years"`
-	Num              int               `json:"num"`
-	NumWatchedToLast int               `json:"numWatchedToLast"`
+	Years        map[int]animeYear `json:"years"`
+	Num          int               `json:"num"`
+	NumCompleted int               `json:"numCompleted"`
 }
 type animeYear struct {
-	Cours            map[int]animeCour `json:"cours"`
-	Year             int               `json:"year"`
-	Num              int               `json:"num"`
-	NumWatchedToLast int               `json:"numWatchedToLast"`
+	Cours        map[int]animeCour `json:"cours"`
+	Year         int               `json:"year"`
+	Num          int               `json:"num"`
+	NumCompleted int               `json:"numCompleted"`
 }
 
 type animeCour struct {
-	Animes           []anime `json:"animes"`
-	Cour             int     `json:"cour"`
-	Num              int     `json:"num"`
-	NumWatchedToLast int     `json:"numWatchedToLast"`
+	Animes       []anime `json:"animes"`
+	Cour         int     `json:"cour"`
+	Num          int     `json:"num"`
+	NumCompleted int     `json:"numCompleted"`
 }
 type anime struct {
-	Title         string `json:"title"`
-	Year          int    `json:"year"`
-	Cour          int    `json:"cour"`
-	WatchedToLast bool   `json:"watchedToLast"`
+	Title     string `json:"title"`
+	Year      int    `json:"year"`
+	Cour      int    `json:"cour"`
+	Completed bool   `json:"completed"`
 }
 
 func sortAnimesAsc(animes []anime) {
@@ -97,16 +97,16 @@ func parse(animesBytes []byte) (*animeAll, error) {
 			}
 		} else if strings.HasPrefix(scanner.Text(), "- ") {
 			titleCandidate := scanner.Text()[2:]
-			watchedToLast := true
+			completed := true
 			if rune(titleCandidate[0]) == '#' {
-				watchedToLast = false
+				completed = false
 				titleCandidate = titleCandidate[1:]
 			}
 			anime := anime{
 				titleCandidate,
 				year,
 				cour,
-				watchedToLast,
+				completed,
 			}
 			setAnime(anime, animes)
 		}
@@ -115,17 +115,17 @@ func parse(animesBytes []byte) (*animeAll, error) {
 }
 
 func setAnime(anm anime, anms *animeAll) {
-	watchedToLastInt := watchedToLastToInt(anm)
+	completedInt := completedToInt(anm)
 	v1, ok := anms.Years[anm.Year]
 	if !ok {
 		v1 = animeYear{
 			make(map[int]animeCour),
 			anm.Year,
 			1,
-			watchedToLastInt}
+			completedInt}
 	} else {
 		v1.Num++
-		v1.NumWatchedToLast += watchedToLastInt
+		v1.NumCompleted += completedInt
 	}
 	anms.Years[anm.Year] = v1
 	v2, ok := v1.Cours[anm.Cour]
@@ -134,19 +134,19 @@ func setAnime(anm anime, anms *animeAll) {
 			[]anime{anm},
 			anm.Cour,
 			1,
-			watchedToLastInt}
+			completedInt}
 	} else {
 		v2.Animes = append(v2.Animes, anm)
 		v2.Num++
-		v2.NumWatchedToLast += watchedToLastInt
+		v2.NumCompleted += completedInt
 	}
 	v1.Cours[anm.Cour] = v2
 	anms.Num++
-	anms.NumWatchedToLast += watchedToLastInt
+	anms.NumCompleted += completedInt
 }
 
-func watchedToLastToInt(anime anime) int {
-	if anime.WatchedToLast {
+func completedToInt(anime anime) int {
+	if anime.Completed {
 		return 1
 	}
 	return 0
@@ -193,7 +193,7 @@ func convertToMd(srcJSON, dstMd string) error {
 			fmt.Fprintf(&b, "## %v.%v\n", year, cour)
 			for _, anime := range animeCour.Animes {
 				fmt.Fprint(&b, "- ")
-				if !anime.WatchedToLast {
+				if !anime.Completed {
 					fmt.Fprint(&b, "#")
 				}
 				fmt.Fprintf(&b, "%v\n", strings.Trim(anime.Title, " "))

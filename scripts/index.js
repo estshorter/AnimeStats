@@ -5,9 +5,9 @@ async function render() {
     const animes = await response.json();
     // assume animes is sorted in descending order
     const tableHTML = createAnimeHistoryTable(animes.years);
-    const hitrateAll = (animes.numWatchedToLast / animes.num * 100).toFixed(1);
+    const hitrateAll = (animes.numCompleted / animes.num * 100).toFixed(1);
     document.getElementById("reportHitrate").innerHTML =
-        `全期間完走率: ${animes.numWatchedToLast}/${animes.num} = ${hitrateAll}%`
+        `全期間完走率: ${animes.numCompleted}/${animes.num} = ${hitrateAll}%`
     document.getElementById("reportTable").innerHTML = tableHTML
 
     Highcharts.setOptions({
@@ -30,10 +30,10 @@ function createAnimeHistoryTable(animesJson) {
         for (const animesCour of Object.values(animesYear.cours).reverse()) {
             tableHTML += `<th>${animesYear.year}.${animesCour.cour}</th>`
             for (const anime of animesCour.animes) {
-                if (anime.watchedToLast) {
+                if (anime.completed) {
                     tableHTML += `<tr><td>${anime.title}</td></tr>`;
                 } else {
-                    tableHTML += `<tr id ="notWatchedAll"><td>${anime.title}</td></tr>`;
+                    tableHTML += `<tr id ="notCompleted"><td>${anime.title}</td></tr>`;
                 }
             }
         }
@@ -43,12 +43,12 @@ function createAnimeHistoryTable(animesJson) {
 
 function drawAnimeHistory(animesJson) {
     const sumByCourArray = [];
-    const sumByCourWatchedAllArray = [];
+    const sumByCourCompletedArray = [];
     const courName = [];
     for (const animesYear of Object.values(animesJson)) {
         for (const animesCour of Object.values(animesYear.cours)) {
             sumByCourArray.push(animesCour.num);
-            sumByCourWatchedAllArray.push(animesCour.numWatchedToLast);
+            sumByCourCompletedArray.push(animesCour.numCompleted);
             courName.push(`${animesYear.year}.${animesCour.cour}`);
         }
     }
@@ -75,7 +75,7 @@ function drawAnimeHistory(animesJson) {
         // データ系列を作成
         series: [
             { name: "視聴", data: sumByCourArray, id: 'watched' },
-            { name: "完走", data: sumByCourWatchedAllArray, id: 'watchedToLast' },
+            { name: "完走", data: sumByCourCompletedArray, id: 'completed' },
             {
                 name: "視聴(移動平均)", linkedTo: 'watched', type: 'sma',
                 params: {
@@ -89,7 +89,7 @@ function drawAnimeHistory(animesJson) {
                 }
             },
             {
-                name: "完走(移動平均)", linkedTo: 'watchedToLast', type: 'sma',
+                name: "完走(移動平均)", linkedTo: 'completed', type: 'sma',
                 params: {
                     period: 4
                 },
@@ -105,11 +105,11 @@ function drawAnimeHistory(animesJson) {
 function drawHitRate(animesJson) {
     const hitRate = [];
     const sumByYearArray = [];
-    const sumByYearWatchedAllArray = [];
+    const sumByYearCompletedArray = [];
     for (const animesYear of Object.values(animesJson)) {
-        hitRate.push(animesYear.numWatchedToLast / animesYear.num * 100);
+        hitRate.push(animesYear.numCompleted / animesYear.num * 100);
         sumByYearArray.push(animesYear.num);
-        sumByYearWatchedAllArray.push(animesYear.numWatchedToLast);
+        sumByYearCompletedArray.push(animesYear.numCompleted);
     }
     const yearName = Object.keys(animesJson);
 
@@ -141,7 +141,7 @@ function drawHitRate(animesJson) {
         // データ系列を作成
         series: [
             { name: "視聴", data: sumByYearArray },
-            { name: "完走", data: sumByYearWatchedAllArray },
+            { name: "完走", data: sumByYearCompletedArray },
             {
                 name: "完走率", data: hitRate, yAxis: 1,
                 tooltip: {
