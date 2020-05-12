@@ -33,7 +33,7 @@ function createAnimeHistoryTable(animesJson) {
                 if (anime.watchedToLast) {
                     tableHTML += `<tr><td>${anime.title}</td></tr>`;
                 } else {
-                    tableHTML += `<tr id ="notWatchedAll"><td${anime.title}</td></tr>`;
+                    tableHTML += `<tr id ="notWatchedAll"><td>${anime.title}</td></tr>`;
                 }
             }
         }
