@@ -102,6 +102,7 @@ function drawAnimeHistory(animesJson) {
             }]
     });
 }
+
 function drawHitRate(animesJson) {
     const hitRate = [];
     const sumByYearArray = [];
