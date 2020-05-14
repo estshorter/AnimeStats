@@ -4,15 +4,7 @@
     font-size: 16px;
 }
 
-#animeHistory {
-    width: 100%; max-width: 800px;
-}
-
-#hitrate{
-    width: 100%; max-width: 800px;
-}
-
-#app{
+div#app{
     padding-top: 10px;
     padding-bottom: 20px;
     margin: 0 auto;
@@ -20,15 +12,14 @@
 }
 
 @media screen and (max-width:800px) { 
-    #app{
+    div#app{
         margin: 0 auto;
         width: 90%;
     }
-    
 }
 
-#notCompleted {
-    background-color: #cfcfcf
+div#animeHistory, div#hitrate {
+    width: 100%; max-width: 800px;
 }
 
 table {
@@ -36,6 +27,22 @@ table {
     width: 100%; max-width: 800px;
     border-spacing: 0;
     font-size: 16px;
+}
+
+table tr {
+    background: #fff;
+}
+
+table tr:nth-child(2n+1) {
+    background: #f1f6fc;
+}
+
+table tr:hover {
+    background: #bbd4ee;
+}
+
+table tr#notCompleted {
+    background-color: #cfcfcf
 }
 
 table th {
@@ -49,22 +56,10 @@ table th {
     border-left: 1px solid rgb(53, 121, 190);
 }
 
-table tr td {
+table td {
     padding: 8px 15px;
     border-bottom: 1px solid #84b2e0;
     border-left: 1px solid #84b2e0;
     border-right: 1px solid #84b2e0;
     text-align: left;
-}
-
-table tr {
-    background: #fff;
-}
-
-table tr:nth-child(2n+1) {
-    background: #f1f6fc;
-}
-
-table tr:hover {
-    background: #bbd4ee;
 }
