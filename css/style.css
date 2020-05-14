@@ -27,7 +27,6 @@
     
 }
 
-
 #notCompleted {
     background-color: #cfcfcf
 }
@@ -35,7 +34,6 @@
 table {
     padding-top: 9px;
     width: 100%; max-width: 800px;
-    /* width: auto; */
     border-spacing: 0;
     font-size: 16px;
 }
@@ -47,9 +45,6 @@ table th {
     font-weight: bold;
     line-height: 120%;
     text-align: left;
-}
-
-table th {
     border-right: 1px solid rgb(53, 121, 190);
     border-left: 1px solid rgb(53, 121, 190);
 }
@@ -58,11 +53,8 @@ table tr td {
     padding: 8px 15px;
     border-bottom: 1px solid #84b2e0;
     border-left: 1px solid #84b2e0;
-    text-align: left;
-}
-
-table tr td:last-child {
     border-right: 1px solid #84b2e0;
+    text-align: left;
 }
 
 table tr {
