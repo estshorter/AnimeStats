@@ -61,61 +61,36 @@ func sortAnimesDes(animes []anime) {
 	})
 }
 
-func readAnimeHistory(filepath string) ([]byte, error) {
-	fp, err := os.Open(filepath)
-	if err != nil {
-		return nil, err
+func (anime *anime) completedToInt() int {
+	if anime.Completed {
+		return 1
 	}
-	defer fp.Close()
-
-	data, err := ioutil.ReadAll(fp)
-	if err != nil {
-		log.Fatal(err)
-	}
-	return data, nil
+	return 0
 }
 
-func parse(animesBytes []byte) (*animeAll, error) {
-	animes := &animeAll{make(map[int]animeYear), 0, 0}
-	var year, cour int
-	var err error
-	scanner := bufio.NewScanner(bytes.NewReader(animesBytes))
-	for scanner.Scan() {
-		if strings.HasPrefix(scanner.Text(), "##") {
-			trimmed := strings.Trim(scanner.Text()[2:], " ")
-			yearCour := strings.Split(trimmed, ".")
-			if len(yearCour) != 2 {
-				return nil, errors.New("YearCour cannot be splitted by '.'")
+func (anms *animeAll) mdString() string {
+	var b strings.Builder
+	fmt.Fprint(&b, "# Anime History	\n\n")
+	years := sortYearsDec(anms.Years)
+	for _, year := range years {
+		animeYear := anms.Years[year]
+		cours := sortCoursDec(animeYear.Cours)
+		for _, cour := range cours {
+			fmt.Fprintf(&b, "## %v.%v\n", year, cour)
+			for _, anime := range animeYear.Cours[cour].Animes {
+				fmt.Fprint(&b, "- ")
+				if !anime.Completed {
+					fmt.Fprint(&b, "#")
+				}
+				fmt.Fprintf(&b, "%v\n", strings.Trim(anime.Title, " "))
 			}
-			year, err = strconv.Atoi(yearCour[0])
-			if err != nil {
-				return nil, err
-			}
-			cour, err = strconv.Atoi(yearCour[1])
-			if err != nil {
-				return nil, err
-			}
-		} else if strings.HasPrefix(scanner.Text(), "- ") {
-			titleCandidate := scanner.Text()[2:]
-			completed := true
-			if rune(titleCandidate[0]) == '#' {
-				completed = false
-				titleCandidate = titleCandidate[1:]
-			}
-			anime := anime{
-				titleCandidate,
-				year,
-				cour,
-				completed,
-			}
-			setAnime(&anime, animes)
 		}
 	}
-	return animes, nil
+	return b.String()
 }
 
-func setAnime(anm *anime, anms *animeAll) {
-	completedInt := completedToInt(anm)
+func (anms *animeAll) setAnime(anm *anime) {
+	completedInt := anm.completedToInt()
 	v1, ok := anms.Years[anm.Year]
 	if !ok {
 		v1 = animeYear{
@@ -145,11 +120,67 @@ func setAnime(anm *anime, anms *animeAll) {
 	anms.NumCompleted += completedInt
 }
 
-func completedToInt(anime *anime) int {
-	if anime.Completed {
-		return 1
+func readAnimeHistory(filepath string) ([]byte, error) {
+	fp, err := os.Open(filepath)
+	if err != nil {
+		return nil, err
 	}
-	return 0
+	defer fp.Close()
+
+	data, err := ioutil.ReadAll(fp)
+	if err != nil {
+		log.Fatal(err)
+	}
+	return data, nil
+}
+
+func parseMd(animesBytes []byte) (*animeAll, error) {
+	animes := &animeAll{make(map[int]animeYear), 0, 0}
+	var year, cour int
+	var err error
+	scanner := bufio.NewScanner(bytes.NewReader(animesBytes))
+	for scanner.Scan() {
+		if strings.HasPrefix(scanner.Text(), "##") {
+			if year, cour, err = parseMdYearCour(scanner.Text()[2:]); err != nil {
+				return nil, err
+			}
+		} else if strings.HasPrefix(scanner.Text(), "- ") {
+			parseTitle(animes, scanner.Text()[2:], year, cour)
+		}
+	}
+	return animes, nil
+}
+
+func parseMdYearCour(txt string) (int, int, error) {
+	trimmed := strings.Trim(txt, " ")
+	yearCour := strings.Split(trimmed, ".")
+	if len(yearCour) != 2 {
+		return 0, 0, errors.New("YearCour cannot be splitted by '.'")
+	}
+	year, err := strconv.Atoi(yearCour[0])
+	if err != nil {
+		return 0, 0, err
+	}
+	cour, err := strconv.Atoi(yearCour[1])
+	if err != nil {
+		return 0, 0, err
+	}
+	return year, cour, nil
+}
+
+func parseTitle(animes *animeAll, titleCandidate string, year, cour int) {
+	completed := true
+	if rune(titleCandidate[0]) == '#' {
+		completed = false
+		titleCandidate = titleCandidate[1:]
+	}
+	anime := anime{
+		titleCandidate,
+		year,
+		cour,
+		completed,
+	}
+	animes.setAnime(&anime)
 }
 
 func convertToJSON(srcMd, dstJSON string) error {
@@ -157,7 +188,7 @@ func convertToJSON(srcMd, dstJSON string) error {
 	if err != nil {
 		return err
 	}
-	animesJSON, err := parse(animes)
+	animesJSON, err := parseMd(animes)
 	if err != nil {
 		return err
 	}
@@ -181,26 +212,8 @@ func convertToMd(srcJSON, dstMd string) error {
 		return err
 	}
 	// sortAnimesDes(animes)
-	var b strings.Builder
-	fmt.Fprint(&b, "# Anime History	\n\n")
-
-	years := sortYearsDec(animes.Years)
-	for _, year := range years {
-		animeYear := animes.Years[year]
-		cours := sortCoursDec(animeYear.Cours)
-		for _, cour := range cours {
-			animeCour := animeYear.Cours[cour]
-			fmt.Fprintf(&b, "## %v.%v\n", year, cour)
-			for _, anime := range animeCour.Animes {
-				fmt.Fprint(&b, "- ")
-				if !anime.Completed {
-					fmt.Fprint(&b, "#")
-				}
-				fmt.Fprintf(&b, "%v\n", strings.Trim(anime.Title, " "))
-			}
-		}
-	}
-	ioutil.WriteFile(dstMd, []byte(b.String()), os.ModePerm)
+	mdStr := animes.mdString()
+	ioutil.WriteFile(dstMd, []byte(mdStr), os.ModePerm)
 	return nil
 }
 
@@ -236,7 +249,7 @@ func main() {
 		ConverttoJSON = false
 	}
 
-	if !toMd {
+	if ConverttoJSON {
 		// md -> json
 		if filepath.Ext(src) != ".md" {
 			fmt.Printf("Please specify a md file as a src file")
