@@ -108,13 +108,13 @@ func parse(animesBytes []byte) (*animeAll, error) {
 				cour,
 				completed,
 			}
-			setAnime(anime, animes)
+			setAnime(&anime, animes)
 		}
 	}
 	return animes, nil
 }
 
-func setAnime(anm anime, anms *animeAll) {
+func setAnime(anm *anime, anms *animeAll) {
 	completedInt := completedToInt(anm)
 	v1, ok := anms.Years[anm.Year]
 	if !ok {
@@ -131,12 +131,12 @@ func setAnime(anm anime, anms *animeAll) {
 	v2, ok := v1.Cours[anm.Cour]
 	if !ok {
 		v2 = animeCour{
-			[]anime{anm},
+			[]anime{*anm},
 			anm.Cour,
 			1,
 			completedInt}
 	} else {
-		v2.Animes = append(v2.Animes, anm)
+		v2.Animes = append(v2.Animes, *anm)
 		v2.Num++
 		v2.NumCompleted += completedInt
 	}
@@ -145,7 +145,7 @@ func setAnime(anm anime, anms *animeAll) {
 	anms.NumCompleted += completedInt
 }
 
-func completedToInt(anime anime) int {
+func completedToInt(anime *anime) int {
 	if anime.Completed {
 		return 1
 	}
