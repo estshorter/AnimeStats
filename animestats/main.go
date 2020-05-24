@@ -193,7 +193,8 @@ func convertToJSON(srcMd, dstJSON string) error {
 		return err
 	}
 	// sortAnimesDes(animesJSON)
-	jsonBytes, err := json.MarshalIndent(animesJSON, "", "    ")
+	// jsonBytes, err := json.MarshalIndent(animesJSON, "", "    ")
+	jsonBytes, err := json.Marshal(animesJSON)
 	if err != nil {
 		return err
 	}
