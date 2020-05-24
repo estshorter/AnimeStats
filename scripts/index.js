@@ -4,11 +4,10 @@ async function render() {
     const response = await fetch("https://estshorter.github.io/AnimeStats/data/animes.json")
     const animes = await response.json();
     // assume animes is sorted in descending order
-    const tableHTML = createAnimeHistoryTable(animes.years);
     const hitrateAll = (animes.numCompleted / animes.num * 100).toFixed(1);
     document.getElementById("reportHitrate").innerHTML =
         `全期間完走率: ${animes.numCompleted}/${animes.num} = ${hitrateAll}%`
-    document.getElementById("reportTable").innerHTML = tableHTML
+    document.getElementById("reportTable").innerHTML = createAnimeHistoryTable(animes.years);
 
     Highcharts.setOptions({
         plotOptions: {
