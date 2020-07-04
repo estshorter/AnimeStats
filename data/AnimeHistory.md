@@ -1,5 +1,7 @@
 # Anime History	
 
+## 2020.3
+- 八月のシンデレラナインRe:fine
 ## 2020.2
 - #新サクラ大戦 the Animation
 ## 2020.1
