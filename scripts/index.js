@@ -27,7 +27,10 @@ function createAnimeHistoryTable(animesJson) {
     let tableHTML = "";
     for (const animesYear of Object.values(animesJson).reverse()) {
         for (const animesCour of Object.values(animesYear.cours).reverse()) {
-            tableHTML += `<th>${animesYear.year}.${animesCour.cour}</th>`
+            tableHTML += `<tr><th>${animesYear.year}.${animesCour.cour}</th></th>`
+            if (animesCour.animes.length == 0) {
+                tableHTML += `<tr id ="notCompleted"><td>None (this is a dummy entry)</td></tr>`;
+            }
             for (const anime of animesCour.animes) {
                 if (anime.completed) {
                     tableHTML += `<tr><td>${anime.title}</td></tr>`;
