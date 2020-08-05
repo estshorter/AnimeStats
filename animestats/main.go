@@ -89,6 +89,27 @@ func (anms *animeAll) mdString() string {
 	return b.String()
 }
 
+func (anms *animeAll) populateMap(year, cour int) {
+	v1, ok := anms.Years[year]
+	if !ok {
+		v1 = animeYear{
+			make(map[int]animeCour),
+			year,
+			0,
+			0}
+		anms.Years[year] = v1
+	}
+	v2, ok := v1.Cours[cour]
+	if !ok {
+		v2 = animeCour{
+			[]anime{},
+			cour,
+			0,
+			0}
+		v1.Cours[cour] = v2
+	}
+}
+
 func (anms *animeAll) setAnime(anm *anime) {
 	completedInt := anm.completedToInt()
 	v1, ok := anms.Years[anm.Year]
@@ -144,6 +165,7 @@ func parseMd(animesBytes []byte) (*animeAll, error) {
 			if year, cour, err = parseMdYearCour(scanner.Text()[2:]); err != nil {
 				return nil, err
 			}
+			animes.populateMap(year, cour)
 		} else if strings.HasPrefix(scanner.Text(), "- ") {
 			parseTitle(animes, scanner.Text()[2:], year, cour)
 		}
