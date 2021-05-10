@@ -1,4 +1,6 @@
 # Anime History
+## 2021.2
+- Vivy -Fluorite Eye's Song-
 ## 2021.1
 - のんのんびより のんすとっぷ
 - #裏世界ピクニック
