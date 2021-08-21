@@ -41,25 +41,25 @@ type anime struct {
 	Completed bool   `json:"completed"`
 }
 
-func sortAnimesAsc(animes []anime) {
-	//ascending by year and cour
-	sort.Slice(animes, func(i, j int) bool {
-		if animes[i].Year == animes[j].Year {
-			return animes[i].Cour < animes[j].Cour
-		}
-		return animes[i].Year < animes[j].Year
-	})
-}
+// func sortAnimesAsc(animes []anime) {
+// 	//ascending by year and cour
+// 	sort.Slice(animes, func(i, j int) bool {
+// 		if animes[i].Year == animes[j].Year {
+// 			return animes[i].Cour < animes[j].Cour
+// 		}
+// 		return animes[i].Year < animes[j].Year
+// 	})
+// }
 
-func sortAnimesDes(animes []anime) {
-	//ascending by year and cour
-	sort.Slice(animes, func(i, j int) bool {
-		if animes[i].Year == animes[j].Year {
-			return animes[i].Cour > animes[j].Cour
-		}
-		return animes[i].Year > animes[j].Year
-	})
-}
+// func sortAnimesDes(animes []anime) {
+// 	//ascending by year and cour
+// 	sort.Slice(animes, func(i, j int) bool {
+// 		if animes[i].Year == animes[j].Year {
+// 			return animes[i].Cour > animes[j].Cour
+// 		}
+// 		return animes[i].Year > animes[j].Year
+// 	})
+// }
 
 func (anime *anime) completedToInt() int {
 	if anime.Completed {
