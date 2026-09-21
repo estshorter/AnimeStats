@@ -1,4 +1,6 @@
 # Anime History
+## 2026.3
+## 2026.2
 ## 2026.1
 - 葬送のフリーレン
 - Fate/strange Fake
