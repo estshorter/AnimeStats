@@ -1,5 +1,7 @@
 # Anime History
 ## 2026.3
+- #攻殻機動隊 THE GHOST IN THE SHELL
+
 ## 2026.2
 ## 2026.1
 - 葬送のフリーレン
